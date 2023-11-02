@@ -1,0 +1,10 @@
+.container-fluid {
+    width: 100%;
+    background-color: #FFDD83; 
+    background-color: rgba(255, 221, 131, 0.5); /* Color más opaco */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 7px;
+  }
+
+  
