@@ -13,8 +13,8 @@
 
 .user-card {
     position: relative;
-    left: -60px;
-    width: 40%;
+    left: 0px;
+    width: 30%;
     
 }
 
@@ -29,6 +29,7 @@
 
 .btn {
     background-color: #98DFD6;
+    display: block;
     border: 2px solid hsla(170, 60%, 40%, 0.6);
     color: #00235B;
     font-size: larger;
