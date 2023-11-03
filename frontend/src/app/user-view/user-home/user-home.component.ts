@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-home',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent {
+  constructor(
+    private router: Router
+  ){}
+
+  registerActivity(){
+    this.router.navigate(['/app-register-activity']);
+
+  }
 
 }

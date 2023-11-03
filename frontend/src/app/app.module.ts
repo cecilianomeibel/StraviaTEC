@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
 import { FriendCardComponent } from './reusables/friend-card/friend-card.component';
+import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     UserHomeComponent,
-    FriendCardComponent
+    FriendCardComponent,
+    RegisterActivityComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
+import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
 
 const routes: Routes = [
   {
     path: '',
     component: UserHomeComponent,
     title: 'Inicio',
+  },
+  {
+    path: 'app-register-activity',
+    component:RegisterActivityComponent,
+    title: 'Registrar actividad'
   }
 ];
 
