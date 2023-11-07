@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
 import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
 import { LoginComponent } from './user-view/login/login.component';
+import { NewAccountComponent } from './user-view/new-account/new-account.component';
 const routes: Routes = [
   {
     path: '',
@@ -18,6 +19,11 @@ const routes: Routes = [
     path: 'app-login',
     component: LoginComponent,
     title: 'Cuenta Inicio'
+  },
+  {
+    path: 'app-new-account',
+    component: NewAccountComponent,
+    title: 'Nueva sesion',
   }
 ];
 

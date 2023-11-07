@@ -9,6 +9,7 @@ import { FriendCardComponent } from './reusables/friend-card/friend-card.compone
 import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './user-view/login/login.component';
+import { NewAccountComponent } from './user-view/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './user-view/login/login.component';
     UserHomeComponent,
     FriendCardComponent,
     RegisterActivityComponent,
-    LoginComponent
+    LoginComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
