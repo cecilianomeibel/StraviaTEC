@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
 import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
-
+import { LoginComponent } from './user-view/login/login.component';
 const routes: Routes = [
   {
     path: '',
@@ -11,8 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'app-register-activity',
-    component:RegisterActivityComponent,
+    component: RegisterActivityComponent,
     title: 'Registrar actividad'
+  },
+  {
+    path: 'app-login',
+    component: LoginComponent,
+    title: 'Cuenta Inicio'
   }
 ];
 
