@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             Inicio</a>
@@ -13,13 +13,18 @@
                         <a class="nav-link" (click)="loginUser()">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="promotions()">Promociones</a>
+                        <a class="nav-link" (click)="inscription()">Inscripciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="contact()">Contacto</a>
                     </li>
                 </ul>
             </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar atleta" aria-label="Search">
+                <button class="btn btn-primary" type="submit" (click)="listAthletes()">Buscar</button>
+            </form>
+
         </div>
     </div>
 </nav>

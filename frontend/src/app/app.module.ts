@@ -10,6 +10,8 @@ import { RegisterActivityComponent } from './user-view/register-activity/registe
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './user-view/login/login.component';
 import { NewAccountComponent } from './user-view/new-account/new-account.component';
+import { AthleteInfoComponent } from './reusables/athlete-info/athlete-info.component';
+import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NewAccountComponent } from './user-view/new-account/new-account.compone
     FriendCardComponent,
     RegisterActivityComponent,
     LoginComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    AthleteInfoComponent,
+    AthleteListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,15 +13,15 @@ export class NavBarComponent {
   loginUser() {
     this.router.navigate(['/app-login']);
   }
-  promotions() {
+  inscription() {
     this.router.navigate(['']);
   }
   contact() {
     this.router.navigate(['']);
   }
 
-  goBack() {
-    this.router.navigate(['/']);
+  listAthletes() {
+    this.router.navigate(['/app-athlete-list']);
   }
 
 }
