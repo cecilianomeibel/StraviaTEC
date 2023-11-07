@@ -5,7 +5,7 @@ import { RegisterActivityComponent } from './user-view/register-activity/registe
 import { LoginComponent } from './user-view/login/login.component';
 import { NewAccountComponent } from './user-view/new-account/new-account.component';
 import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
-
+import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.component';
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'app-athlete-list',
     component: AthleteListComponent,
     title: 'Lista Atletas'
+  },
+  {
+    path: 'app-inscriptions',
+    component: InscriptionsComponent,
+    title: 'Inscripciones'
   }
 ];
 

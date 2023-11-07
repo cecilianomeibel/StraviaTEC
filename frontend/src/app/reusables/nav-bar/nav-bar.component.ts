@@ -14,7 +14,7 @@ export class NavBarComponent {
     this.router.navigate(['/app-login']);
   }
   inscription() {
-    this.router.navigate(['']);
+    this.router.navigate(['/app-inscriptions']);
   }
   contact() {
     this.router.navigate(['']);
