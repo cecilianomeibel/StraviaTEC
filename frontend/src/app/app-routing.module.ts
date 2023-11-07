@@ -6,6 +6,8 @@ import { LoginComponent } from './user-view/login/login.component';
 import { NewAccountComponent } from './user-view/new-account/new-account.component';
 import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
 import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.component';
+import { ContactComponent } from './user-view/contact/contact.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -36,6 +38,11 @@ const routes: Routes = [
     path: 'app-inscriptions',
     component: InscriptionsComponent,
     title: 'Inscripciones'
+  },
+  {
+    path: 'app-contact',
+    component: ContactComponent,
+    title: 'Contacto'
   }
 ];
 

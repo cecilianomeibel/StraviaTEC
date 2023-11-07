@@ -13,6 +13,7 @@ import { NewAccountComponent } from './user-view/new-account/new-account.compone
 import { AthleteInfoComponent } from './reusables/athlete-info/athlete-info.component';
 import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
 import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.component';
+import { ContactComponent } from './user-view/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.com
     NewAccountComponent,
     AthleteInfoComponent,
     AthleteListComponent,
-    InscriptionsComponent
+    InscriptionsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
