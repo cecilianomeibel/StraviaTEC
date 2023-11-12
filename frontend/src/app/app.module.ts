@@ -14,6 +14,8 @@ import { AthleteInfoComponent } from './reusables/athlete-info/athlete-info.comp
 import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
 import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.component';
 import { ContactComponent } from './user-view/contact/contact.component';
+import { StravLoginComponent } from './stravia-view/strav-login/strav-login.component';
+import { ManageCareersComponent } from './stravia-view/manage-careers/manage-careers.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ContactComponent } from './user-view/contact/contact.component';
     AthleteInfoComponent,
     AthleteListComponent,
     InscriptionsComponent,
-    ContactComponent
+    ContactComponent,
+    StravLoginComponent,
+    ManageCareersComponent
   ],
   imports: [
     BrowserModule,
