@@ -7,6 +7,9 @@ import { NewAccountComponent } from './user-view/new-account/new-account.compone
 import { AthleteListComponent } from './user-view/athlete-list/athlete-list.component';
 import { InscriptionsComponent } from './user-view/inscriptions/inscriptions.component';
 import { ContactComponent } from './user-view/contact/contact.component';
+import { StravLoginComponent } from './stravia-view/strav-login/strav-login.component';
+import { ManageRaceComponent } from './stravia-view/manage-race/manage-race.component';
+
 
 const routes: Routes = [
   {
@@ -43,6 +46,16 @@ const routes: Routes = [
     path: 'app-contact',
     component: ContactComponent,
     title: 'Contacto'
+  },
+  {
+    path: 'app-manage-race',
+    component: ManageRaceComponent,
+    title: 'Administrar carreras'
+  },
+  {
+    path: 'app-strav-login',
+    component: StravLoginComponent,
+    title: 'Sesion Admin'
   }
 ];
 
