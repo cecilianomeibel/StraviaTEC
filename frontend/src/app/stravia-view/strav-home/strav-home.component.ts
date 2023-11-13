@@ -16,7 +16,7 @@ export class StravHomeComponent {
   }
 
   manageChallenge() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/app-manage-challenge']);
   }
 
   validation() {

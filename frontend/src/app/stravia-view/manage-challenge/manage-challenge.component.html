@@ -1,7 +1,7 @@
 <div class="container mt-3">
     <div class="row justify-content-center mt-4">
         <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
-        <h1 class="text-center">Crear Carreras</h1>
+        <h1 class="text-center">Crear Retos</h1>
 
     </div>
     <!-- inputs completo <input type="number" id="price" formControlName="price" required /> -->
@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <!-- <div class="form-group">-->
                     <div>
-                        <label for="idrace">ID de Carrera:</label>
+                        <label for="idrace">ID del Reto:</label>
                         <select class="form-select" id="idarace">
 
                         </select>
@@ -25,7 +25,7 @@
                     <!-- <div class="form-group">-->
 
                     <div>
-                        <label for="idactivity">Tipo de Actividad:</label>
+                        <label for="idactivity">Tipo de Actividad/kilometraje:</label>
                         <select class="form-select" id="idactivity">
                             <option value="0">Selecciona una Actividad</option>
                             <option>Competencia</option>
@@ -66,23 +66,13 @@
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <label for="date">Fecha:</label>
-                        <input class="input-select" type="text" id="date" />
-                    </div>
-                    <br>
-                    <div>
                         <label for="name">Nombre:</label>
                         <input class="input-select" type="text" id="name" />
                     </div>
                     <br>
                     <div>
-                        <label for="price">Costo:</label>
+                        <label for="price">Periodo:</label>
                         <input class="input-select" type="text" id="price" />
-                    </div>
-                    <br>
-                    <div>
-                        <label for="accpunt">Cuenta Bancaria:</label>
-                        <input class="input-select" type="text" id="account" />
                     </div>
                 </div>
 
@@ -101,7 +91,7 @@
     <!-- Lista de promociones de aire -->
     <div class="row justify-content-center mt-4">
 
-        <h1 class="text-center">Carreras Registradas</h1>
+        <h1 class="text-center">Retos Registrados</h1>
 
     </div>
     <table class="table mt-4">
@@ -109,13 +99,10 @@
             <tr>
                 <th>ID Carrera</th>
                 <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Recorrido</th>
-                <th>Tipo de Actividad</th>
-                <th>Tipo de Carrera</th>
-                <th>Costo</th>
-                <th>Cuenta</th>
-                <th>Categoría</th>
+                <th>Periodo ( días )</th>
+                <th>Tipo de Actividad (km)</th>
+                <th>Categoría?</th>
+                <th>Tipo de Evento</th>
                 <th>Patrocinadores</th>
             </tr>
         </thead>
@@ -123,14 +110,11 @@
             <!-- *ngFor="let promotion of promotionList" -->
             <tr>
                 <td>id</td>
-                <td>tecRace</td>
-                <td>jueves</td>
-                <td>recorrido</td>
-                <td>talamanca-san jose</td>
+                <td>TecChallenge</td>
+                <td>12</td>
+                <td>20</td>
+                <td>fondo</td>
                 <td>privada</td>
-                <td>10000</td>
-                <td>1-234-565</td>
-                <td>nadar</td>
                 <td>gucci</td>
                 <td>
                     <button class="btn btn-sm btn-info" (click)="editRace()">

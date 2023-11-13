@@ -17,6 +17,7 @@ import { ContactComponent } from './user-view/contact/contact.component';
 import { StravLoginComponent } from './stravia-view/strav-login/strav-login.component';
 import { ManageRaceComponent } from './stravia-view/manage-race/manage-race.component';
 import { StravHomeComponent } from './stravia-view/strav-home/strav-home.component';
+import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage-challenge.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { StravHomeComponent } from './stravia-view/strav-home/strav-home.compone
     ContactComponent,
     StravLoginComponent,
     ManageRaceComponent,
-    StravHomeComponent
+    StravHomeComponent,
+    ManageChallengeComponent
   ],
   imports: [
     BrowserModule,
