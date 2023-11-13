@@ -6,5 +6,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./manage-race.component.css']
 })
 export class ManageRaceComponent {
+  executionList: any;
+  promotionList: any;
+  editMode = false;
+  //promotionForm: FormGroup;
+  constructor(
 
+  ) {
+  }
+
+  ngOnInit() {
+
+  }
+
+  editMovie() {
+
+  }
+
+  saveMovie() {
+
+  }
+
+  deleteMovie() {
+
+  }
+
+  createNew() {
+
+  }
 }

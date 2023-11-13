@@ -1,1 +1,34 @@
-<p>strav-login works!</p>
+<div class="row justify-content-center mt-4">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="row justify-content-center mt-4">
+                        <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
+                    </div>
+                    <h1 class="row justify-content-center mt-4"> Iniciar sesión de Administrador </h1>
+
+                    <div class="card-body">
+                        <!-- detro del tag form <form [formGroup]="loginForm" (ngSubmit)="login()">-->
+                        <form>
+                            <div class="mb-3">
+                                <label for="usuario">Correo:</label>
+                                <input type="text" id="correo" placeholder="Ingrese su correo" class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="contrasena">Contraseña:</label>
+                                <input type="password" id="password" placeholder="Ingrese su contraseña"
+                                    class="form-control" />
+                            </div>
+                            <div class="col justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary">
+                                    Iniciar Sesión
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
