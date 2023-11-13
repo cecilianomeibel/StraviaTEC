@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-race',
@@ -10,28 +11,31 @@ export class ManageRaceComponent {
   promotionList: any;
   editMode = false;
   //promotionForm: FormGroup;
-  constructor(
-
-  ) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
 
   }
 
-  editMovie() {
+  editRace() {
 
   }
 
-  saveMovie() {
+  saveRace() {
 
   }
 
-  deleteMovie() {
+  deleteRace() {
 
   }
 
   createNew() {
 
   }
+
+  home() {
+    this.router.navigate(['/']);
+  }
+
 }

@@ -1,90 +1,109 @@
-<div class="container mt-4">
-    <h2>Gestionar Carreras de Stravia</h2>
+<div class="container mt-3">
+    <div class="row justify-content-center mt-4">
+        <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
+        <h1 class="text-center">Gestionar Carreras</h1>
+
+    </div>
     <!-- inputs completo <input type="number" id="price" formControlName="price" required /> -->
 
     <!-- Formulario para crear/editar promociones  <form [formGroup]="promotionForm" (ngSubmit)="saveMovie()"> -->
-    <form>
-        <div class="row">
-            <div class="col-md-6">
-                <!-- <div class="form-group">-->
-                <div>
-                    <label for="idexecution">ID de Carrera:</label>
-                    <select id="idexecution">
+    <div class="container mt-5">
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- <div class="form-group">-->
+                    <div>
+                        <label for="idrace">ID de Carrera:</label>
+                        <select class="form-select" id="idarace">
 
-                    </select>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <!-- <div class="form-group">-->
-                <div>
-                    <label for="period">Nombre:</label>
-                    <input type="text" id="period" />
+            <div class="row">
+                <div class="form-container" class="col-md-6">
+                    <!-- <div class="form-group">-->
+
+                    <div>
+                        <label for="idactivity">Tipo de Actividad:</label>
+                        <select class="form-select" id="idactivity">
+                            <option value="0">Selecciona una Actividad</option>
+                            <option>Competencia</option>
+                            <option>Reto</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="idevent">Tipo de evento:</label>
+                        <select class="form-select" id="idevent">
+                            <option value="0">Selecciona un Evento</option>
+                            <option>privado</option>
+                            <option>público</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="idcategory">Categoría:</label>
+                        <select class="form-select" id="idcatgory">
+                            <option value="0">Selecciona una Categoría</option>
+                            <option>Senderismo</option>
+                            <option>Ruta en Bicicleta</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="idsponsor">Patrocinadores:</label>
+                        <select class="form-select" id="idsponsor">
+                            <option value="0">Selecciona un Patrocinador</option>
+                            <option>gucci</option>
+                            <option>Intel</option>
+
+                        </select>
+                    </div>
+
+
+
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="price">Fecha:</label>
-                    <input type="number" id="price" />
+                <div class="col-md-6">
+                    <div>
+                        <label for="date">Fecha:</label>
+                        <input class="input-select" type="text" id="date" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input class="input-select" type="text" id="name" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="price">Costo:</label>
+                        <input class="input-select" type="text" id="price" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="accpunt">Cuenta Bancaria:</label>
+                        <input class="input-select" type="text" id="account" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="price">Precio:</label>
-                    <input type="number" id="price" />
-                </div>
-            </div>
 
+
+            </div>
+            <!-- <div class="form-group">-->
             <div>
-                <label for="idexecution">Categoria:</label>
-                <select id="idexecution">
 
-                </select>
+                <button type="button" class="btn btn1" (click)="createNew()">
+                    Crear
+                </button>
             </div>
-            <div>
-                <label for="idexecution">Tipo de Actividad:</label>
-                <select id="idexecution">
-
-                </select>
-            </div>
-
-            <div>
-                <label for="idexecution">Tipo de evento:</label>
-                <select id="idexecution">
-
-                </select>
-            </div>
-            <div>
-                <label for="idexecution">Categoría:</label>
-                <select id="idexecution">
-
-                </select>
-            </div>
-            <div>
-                <label for="idexecution">Patrocinadores:</label>
-                <select id="idexecution">
-
-                </select>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="price">Cuenta Bancaria:</label>
-                    <input type="number" id="price" />
-                </div>
-            </div>
-        </div>
-        <!-- <div class="form-group">-->
-        <div>
-
-            <button type="button" class="btn btn-secondary" (click)="createNew()">
-                Crear
-            </button>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <!-- Lista de promociones de aire -->
+    <div class="row justify-content-center mt-4">
+
+        <h1 class="text-center">Carreras Registradas</h1>
+
+    </div>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -114,10 +133,10 @@
                 <td>nadar</td>
                 <td>gucci</td>
                 <td>
-                    <button class="btn btn-sm btn-info" (click)="editMovie()">
+                    <button class="btn btn-sm btn-info" (click)="editRace()">
                         Editar
                     </button>
-                    <button class="btn btn-sm btn-danger" (click)="deleteMovie()">
+                    <button class="btn btn-sm btn-danger" (click)="deleteRace()">
                         Eliminar
                     </button>
                 </td>
