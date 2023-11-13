@@ -1,0 +1,17 @@
+.card {
+    width: 30%;
+    margin: 20px;
+    display: inline-block;
+}
+
+.btn.btn-primary {
+
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    width: 20%;
+    background-color: #98DFD6;
+    display: block;
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
