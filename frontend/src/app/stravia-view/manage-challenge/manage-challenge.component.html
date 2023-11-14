@@ -34,14 +34,7 @@
                         </select>
                     </div>
 
-                    <div>
-                        <label for="idevent">Tipo de evento:</label>
-                        <select class="form-select" id="idevent">
-                            <option value="0">Selecciona un Evento</option>
-                            <option>privado</option>
-                            <option>público</option>
-                        </select>
-                    </div>
+
                     <div>
                         <label for="idcategory">Categoría:</label>
                         <select class="form-select" id="idcatgory">
@@ -73,6 +66,14 @@
                     <div>
                         <label for="price">Periodo:</label>
                         <input class="input-select" type="text" id="price" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="group">Grupos:</label>
+                        <input class="input-select" type="text" id="price" />
+                        <button type="button" class="btn btn1" (click)="addGroup()">
+                            Agregaar grupo
+                        </button>
                     </div>
                 </div>
 
@@ -113,7 +114,7 @@
                 <td>TecChallenge</td>
                 <td>12</td>
                 <td>20</td>
-                <td>fondo</td>
+                <td>Master A</td>
                 <td>privada</td>
                 <td>gucci</td>
                 <td>
