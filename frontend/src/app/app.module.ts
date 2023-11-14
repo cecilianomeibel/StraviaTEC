@@ -20,6 +20,7 @@ import { StravHomeComponent } from './stravia-view/strav-home/strav-home.compone
 import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage-challenge.component';
 import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
 import { InscriptionsChallengeComponent } from './reusables/inscriptions-challenge/inscriptions-challenge.component';
+import { JoinGroupComponent } from './user-view/join-group/join-group.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { InscriptionsChallengeComponent } from './reusables/inscriptions-challen
     StravHomeComponent,
     ManageChallengeComponent,
     InscriptionsRaceComponent,
-    InscriptionsChallengeComponent
+    InscriptionsChallengeComponent,
+    JoinGroupComponent
   ],
   imports: [
     BrowserModule,

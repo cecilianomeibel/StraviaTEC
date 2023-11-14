@@ -4,29 +4,6 @@
     left: 145px;
 }
 
-.card-img-top {
-    width: 20%;
-    height: 20%;
-    display: inline-block;
-    margin: 10px;
-}
-
-.user-card {
-    position: relative;
-    left: 0px;
-    width: 30%;
-    
-}
-
-.card-title {
-    font-size: 30px;
-}
-
-.card-text {
-    font-size: 20px;
-    margin-top: 20px;
-}
-
 .btn {
     background-color: #98DFD6;
     display: block;
@@ -41,12 +18,14 @@
     font-size: larger;
     border: 2px solid hsla(170, 60%, 40%, 0.6);
     height: 50px;
-    width: 200px;
+    width: 50%;
+    
 }
 
 .form-container {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
+    align-items: center; 
+    margin-left: 20px;
 }
   
 .form-select, .btn {
@@ -55,3 +34,8 @@
     height: 50px;
 }
 
+.select-title{
+    font-size: 20px; 
+    font-weight: normal; 
+    margin-left: 20px;
+}

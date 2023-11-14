@@ -13,7 +13,10 @@ export class UserHomeComponent {
 
   registerActivity(){
     this.router.navigate(['/app-register-activity']);
+  }
 
+  joinGroup(){
+    this.router.navigate(['/app-join-group']);
   }
 
 }

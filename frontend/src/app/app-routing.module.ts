@@ -13,6 +13,7 @@ import { StravHomeComponent } from './stravia-view/strav-home/strav-home.compone
 import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage-challenge.component';
 import { InscriptionsChallengeComponent } from './reusables/inscriptions-challenge/inscriptions-challenge.component';
 import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
+import { JoinGroupComponent } from './user-view/join-group/join-group.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,11 @@ const routes: Routes = [
     path: 'app-new-account',
     component: NewAccountComponent,
     title: 'Nueva sesion',
+  },
+  {
+    path: 'app-join-group',
+    component: JoinGroupComponent,
+    title: 'Unirse a grupo',
   },
   {
     path: 'app-athlete-list',
