@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using WebAPI.Models;
 using WebAPI.Utils;
 
@@ -17,15 +18,27 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sportsman>>> ObtenerDatos()
+        public async Task<ActionResult<IEnumerable<Sportsman>>> GetAllSportman()
         {
-            // Ejemplo de consulta asincrónica
             string query = "SELECT * FROM SPORTMAN";
-            var result = await _sqlServerConnector.ExecuteQueryAsync<Sportsman>(query);
+            var result = await _sqlServerConnector.ExecuteQueryListAsync<Sportsman>(query);
 
-            // ... hacer algo con el resultado ...
 
             return Ok(result);
         }
+
+        [HttpGet("ByUsername")]
+        public async Task<ActionResult<IEnumerable<Sportsman>>> GetSportman(string username)
+        {
+            string storedProcedureName = "SP_SPORTMAN_BY_USERNAME";
+            SqlParameter[] parameters = {
+                new SqlParameter("@username", username)
+                };
+
+            var result = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Sportsman>(storedProcedureName, parameters);
+
+            return Ok(result);
+        }
+
     }
 }
