@@ -11,6 +11,8 @@ import { StravLoginComponent } from './stravia-view/strav-login/strav-login.comp
 import { ManageRaceComponent } from './stravia-view/manage-race/manage-race.component';
 import { StravHomeComponent } from './stravia-view/strav-home/strav-home.component';
 import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage-challenge.component';
+import { InscriptionsChallengeComponent } from './reusables/inscriptions-challenge/inscriptions-challenge.component';
+import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
 
 const routes: Routes = [
   {
@@ -67,6 +69,16 @@ const routes: Routes = [
     path: 'app-strav-login',
     component: StravLoginComponent,
     title: 'Sesion Admin'
+  },
+  {
+    path: 'app-inscriptions-challenge',
+    component: InscriptionsChallengeComponent,
+    title: 'inscribir reto'
+  },
+  {
+    path: 'app-inscriptions-race',
+    component: InscriptionsRaceComponent,
+    title: 'inscribir carrera'
   }
 ];
 

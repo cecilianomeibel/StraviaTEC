@@ -1,0 +1,36 @@
+<div class="container mt-3">
+    <div class="row justify-content-center mt-4">
+
+        <h1 class="text-center">Retos</h1>
+
+    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Periodo ( días )</th>
+                <th>Tipo de Actividad (km)</th>
+                <th>Categoría?</th>
+                <th>Tipo de Evento</th>
+                <th>Patrocinadores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- *ngFor="let promotion of promotionList" -->
+            <tr>
+                <td>tecRace</td>
+                <td>jueves</td>
+                <td>recorrido</td>
+                <td>talamanca-san jose</td>
+                <td>privada</td>
+                <td>gucci</td>
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="inscription()">
+                        Inscribir
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
