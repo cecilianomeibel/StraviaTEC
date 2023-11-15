@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent {
+  registeredSelect: any;
+
   constructor(
     private router: Router
   ){}
@@ -17,6 +19,14 @@ export class UserHomeComponent {
 
   joinGroup(){
     this.router.navigate(['/app-join-group']);
+  }
+
+  getRegisteredEvent(){
+    if(this.registeredSelect == "Carreras"){
+      this.router.navigate(['/app-registered-races']);
+    }else if(this.registeredSelect == "Retos"){
+      this.router.navigate(['/']);
+    }
   }
 
 }

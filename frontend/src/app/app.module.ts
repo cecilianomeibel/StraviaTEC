@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NavBarComponent } from './reusables/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
 import { FriendCardComponent } from './reusables/friend-card/friend-card.component';
 import { RegisterActivityComponent } from './user-view/register-activity/register-activity.component';
-import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './user-view/login/login.component';
 import { NewAccountComponent } from './user-view/new-account/new-account.component';
 import { AthleteInfoComponent } from './reusables/athlete-info/athlete-info.component';
@@ -21,6 +21,8 @@ import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage
 import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
 import { InscriptionsChallengeComponent } from './reusables/inscriptions-challenge/inscriptions-challenge.component';
 import { JoinGroupComponent } from './user-view/join-group/join-group.component';
+import { ChartComponent } from './reusables/chart/chart.component';
+import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { JoinGroupComponent } from './user-view/join-group/join-group.component'
     NavBarComponent,
     UserHomeComponent,
     FriendCardComponent,
+    ChartComponent,
     RegisterActivityComponent,
     LoginComponent,
     NewAccountComponent,
@@ -41,7 +44,9 @@ import { JoinGroupComponent } from './user-view/join-group/join-group.component'
     ManageChallengeComponent,
     InscriptionsRaceComponent,
     InscriptionsChallengeComponent,
-    JoinGroupComponent
+    JoinGroupComponent,
+    ChartComponent,
+    RegisteredRacesComponent
   ],
   imports: [
     BrowserModule,

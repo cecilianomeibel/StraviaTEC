@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-join-group',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./join-group.component.css']
 })
 export class JoinGroupComponent {
+  constructor(
+    private router: Router
+  ){}
+
+  goHome(){
+    this.router.navigate(['/']);
+  }
 
 }

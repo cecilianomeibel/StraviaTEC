@@ -14,6 +14,7 @@ import { ManageChallengeComponent } from './stravia-view/manage-challenge/manage
 import { InscriptionsChallengeComponent } from './reusables/inscriptions-challenge/inscriptions-challenge.component';
 import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
 import { JoinGroupComponent } from './user-view/join-group/join-group.component';
+import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
     path: 'app-join-group',
     component: JoinGroupComponent,
     title: 'Unirse a grupo',
+  },
+  {
+    path: 'app-registered-races',
+    component: RegisteredRacesComponent,
+    title: 'Carreras registradas',
   },
   {
     path: 'app-athlete-list',

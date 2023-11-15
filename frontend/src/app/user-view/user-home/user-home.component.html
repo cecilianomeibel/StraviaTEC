@@ -12,11 +12,11 @@
           <a class="btn btn-primary" (click)="joinGroup()">Unirse a un grupo</a>
           <p class="card-text">Ver mis:</p>
           <div class="form-container">
-            <select class="form-select" id="custom-select">
-              <option value="1">Carreras</option>
-              <option value="2">Retos</option>
+            <select class="form-select" id="registered-select" [(ngModel)] = "registeredSelect">
+              <option value="Carreras">Carreras</option>
+              <option value="Retos">Retos</option>
             </select>
-            <button type="submit" class="btn btn-primary">Ver</button>
+            <button type="submit" class="btn btn-primary" (click)="getRegisteredEvent()">Ver</button>
           </div>
         </div>
       </div>
