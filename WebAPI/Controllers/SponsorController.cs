@@ -105,7 +105,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("{sponsorName}")]
-        public async Task<IActionResult> DeleteSportman(string sponsorName)
+        public async Task<IActionResult> DeleteSponsor(string sponsorName)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_SPONSOR_CRUD";
