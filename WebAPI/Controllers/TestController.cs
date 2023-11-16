@@ -18,24 +18,24 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sportsman>>> GetAllSportman()
+        public async Task<ActionResult<IEnumerable<Sportman>>> GetAllSportman()
         {
             string query = "SELECT * FROM SPORTMAN";
-            var result = await _sqlServerConnector.ExecuteQueryListAsync<Sportsman>(query);
+            var result = await _sqlServerConnector.ExecuteQueryListAsync<Sportman>(query);
 
 
             return Ok(result);
         }
 
         [HttpGet("ByUsername")]
-        public async Task<ActionResult<IEnumerable<Sportsman>>> GetSportman(string username)
+        public async Task<ActionResult<IEnumerable<Sportman>>> GetSportman(string username)
         {
             string storedProcedureName = "SP_SPORTMAN_BY_USERNAME";
             SqlParameter[] parameters = {
                 new SqlParameter("@username", username)
                 };
 
-            var result = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Sportsman>(storedProcedureName, parameters);
+            var result = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Sportman>(storedProcedureName, parameters);
 
             return Ok(result);
         }

@@ -1,5 +1,5 @@
 ﻿namespace WebAPI.Models;
-public class Sportsman
+public class Sportman
 {
     public string username { get; set; }
     public string name { get; set; }
