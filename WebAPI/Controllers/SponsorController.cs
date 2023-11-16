@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "ReadAll"),
-            new SqlParameter("@name", DBNull.Value)  // Agrega un parámetro @name con un valor predeterminado
+            new SqlParameter("@sponsorName", DBNull.Value)  // Agrega un parámetro @sponsorName con un valor predeterminado
             };
 
             // Ejecuta el stored procedure y devuelve la lista de Sponsor
@@ -36,8 +36,8 @@ namespace WebAPI.Controllers
             return Ok(sponsor);
         }
 
-        [HttpGet("{name}")]
-        public async Task<IActionResult> GetSponsorByName(string name)
+        [HttpGet("{sponsorName}")]
+        public async Task<IActionResult> GetSponsorByName(string sponsorName)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_SPONSOR_CRUD";
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "ReadOnlyOne"),
-            new SqlParameter("@name", name)
+            new SqlParameter("@sponsorName", sponsorName)
             };
 
             // Ejecuta el stored procedure y devuelve el Sponsor con el name proporcionado
@@ -69,7 +69,7 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "Create"),
-            new SqlParameter("@name", sponsor.name),
+            new SqlParameter("@sponsorName", sponsor.sponsorName),
             new SqlParameter("@representant", sponsor.representant),
             new SqlParameter("@representantPhone", sponsor.representantPhone),
             new SqlParameter("@logo", sponsor.logo)
@@ -82,8 +82,8 @@ namespace WebAPI.Controllers
 
        
 
-        [HttpPut("{name}")]
-        public async Task<IActionResult> UpdateSponsor(string name, [FromBody] Sponsor sponsor)
+        [HttpPut("{sponsorName}")]
+        public async Task<IActionResult> UpdateSponsor(string sponsorName, [FromBody] Sponsor sponsor)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_SPONSOR_CRUD";
@@ -92,7 +92,7 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "Update"),
-            new SqlParameter("@name", name),
+            new SqlParameter("@sponsorName", sponsorName),
             new SqlParameter("@representant", sponsor.representant),
             new SqlParameter("@representantPhone", sponsor.representantPhone),
             new SqlParameter("@logo", sponsor.logo)
@@ -104,8 +104,8 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
-        [HttpDelete("{name}")]
-        public async Task<IActionResult> DeleteSportman(string name)
+        [HttpDelete("{sponsorName}")]
+        public async Task<IActionResult> DeleteSportman(string sponsorName)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_SPONSOR_CRUD";
@@ -114,7 +114,7 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "Delete"),
-            new SqlParameter("@name", name)
+            new SqlParameter("@sponsorName", sponsorName)
             };
 
             // Ejecuta el stored procedure y devuelve la respuesta
