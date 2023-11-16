@@ -3,6 +3,6 @@
     public class SponsorByRace
     {
         public int idRace { get; set; }
-        public string nameSponsor { get; set; }
+        public string sponsorName { get; set; }
     }
 }
