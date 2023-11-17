@@ -6,12 +6,16 @@
                 <ul class="list-group list-group-horizontal d-flex">
                     <li class="list-group-item flex-fill">
                         <div class="row justify-content-center mt-4">
-                            <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 150px;">
+                            <img src="{{ sportman.picture }}" class="card-img-top" style="width: 150px;">
                         </div>
                     </li>
                     <li class="list-group-item flex-fill">
                         <div class="row justify-content-center mt-4">
-                            <h5 class="card-title">Nombre y Apellidos</h5>
+                            <h5 class="card-title">Usuario: {{ sportman.username }}</h5>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <h5 class="card-title">Nombre: {{ sportman.username }} y Primer Apellido : {{
+                                sportman.lastname1 }} Segundo Apellido : {{ sportman.lastname2 }}lastname2</h5>
                         </div>
                     </li>
                     <li class="list-group-item flex-fill">

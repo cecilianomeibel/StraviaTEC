@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NavBarComponent } from './reusables/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserHomeComponent } from './user-view/user-home/user-home.component';
@@ -26,6 +26,7 @@ import { RegisteredRacesComponent } from './user-view/registered-races/registere
 import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
 import { RegisteredChallengeCardComponent } from './reusables/registered-challenge-card/registered-challenge-card.component';
 import { CommentComponent } from './user-view/comment/comment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,8 +56,10 @@ import { CommentComponent } from './user-view/comment/comment.component';
     CommentComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
