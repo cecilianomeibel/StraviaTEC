@@ -25,7 +25,7 @@ export class UserHomeComponent {
     if(this.registeredSelect == "Carreras"){
       this.router.navigate(['/app-registered-races']);
     }else if(this.registeredSelect == "Retos"){
-      this.router.navigate(['/']);
+      this.router.navigate(['/app-registered-challenges']);
     }
   }
 

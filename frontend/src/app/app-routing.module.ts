@@ -15,6 +15,7 @@ import { InscriptionsChallengeComponent } from './reusables/inscriptions-challen
 import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscriptions-race.component';
 import { JoinGroupComponent } from './user-view/join-group/join-group.component';
 import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
+import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
     path: 'app-registered-races',
     component: RegisteredRacesComponent,
     title: 'Carreras registradas',
+  },
+  {
+    path: 'app-registered-challenges',
+    component: RegisteredChallengesComponent,
+    title: 'Retos registradas',
   },
   {
     path: 'app-athlete-list',

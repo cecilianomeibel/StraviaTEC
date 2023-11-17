@@ -23,6 +23,9 @@ import { InscriptionsChallengeComponent } from './reusables/inscriptions-challen
 import { JoinGroupComponent } from './user-view/join-group/join-group.component';
 import { ChartComponent } from './reusables/chart/chart.component';
 import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
+import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
+import { RegisteredChallengeCardComponent } from './reusables/registered-challenge-card/registered-challenge-card.component';
+import { CommentComponent } from './user-view/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { RegisteredRacesComponent } from './user-view/registered-races/registere
     InscriptionsChallengeComponent,
     JoinGroupComponent,
     ChartComponent,
-    RegisteredRacesComponent
+    RegisteredRacesComponent,
+    RegisteredChallengesComponent,
+    RegisteredChallengeCardComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
