@@ -26,12 +26,9 @@ import { RegisteredRacesComponent } from './user-view/registered-races/registere
 import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
 import { RegisteredChallengeCardComponent } from './reusables/registered-challenge-card/registered-challenge-card.component';
 import { CommentComponent } from './user-view/comment/comment.component';
-<<<<<<< Updated upstream
 import { HttpClientModule } from '@angular/common/http';
-=======
 import { ParticipantsReportComponent } from './stravia-view/participants-report/participants-report.component';
 import { PositionsReportComponent } from './stravia-view/positions-report/positions-report.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
