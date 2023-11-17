@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,4 +8,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./friend-card.component.css'],
 })
 export class FriendCardComponent {
+  constructor(
+    private router: Router
+  ){}
+
+  viewComments(){
+    this.router.navigate(['/app-comment']);
+  }
 }

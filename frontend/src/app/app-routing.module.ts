@@ -16,12 +16,18 @@ import { InscriptionsRaceComponent } from './reusables/inscriptions-race/inscrip
 import { JoinGroupComponent } from './user-view/join-group/join-group.component';
 import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
 import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
+import { CommentComponent } from './user-view/comment/comment.component';
 
 const routes: Routes = [
   {
     path: '',
     component: UserHomeComponent,
     title: 'Inicio',
+  },
+  {
+    path: 'app-comment',
+    component: CommentComponent,
+    title: 'Comentarios',
   },
   {
     path: 'app-register-activity',
