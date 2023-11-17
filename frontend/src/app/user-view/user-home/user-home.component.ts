@@ -29,12 +29,5 @@ export class UserHomeComponent {
     }
   }
 
-  registerEvent(){
-    if(this.registeredSelect == "Carrera"){
-      this.router.navigate(['/']);
-    }else if(this.registeredSelect == "Reto"){
-      this.router.navigate(['/']);
-    }
-  }
 
 }

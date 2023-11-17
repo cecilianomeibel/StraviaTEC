@@ -10,7 +10,6 @@
           <p class="card-text">Mi perfil</p>
           <a class="btn btn-primary" (click)="registerActivity()">Registrar actividad</a>
           <a class="btn btn-primary" (click)="joinGroup()">Unirse a un grupo</a>
-
           <p class="card-text">Ver mis:</p>
           <div class="form-container">
             <select class="form-select" id="registered-select" [(ngModel)] = "registeredSelect">
@@ -18,15 +17,6 @@
               <option value="Retos">Retos</option>
             </select>
             <button type="submit" class="btn btn-primary" (click)="getRegisteredEvent()">Ver</button>
-          </div>
-
-          <p class="card-text">Registrarme a una:</p>
-          <div class="form-container">
-            <select class="form-select" id="registered-select" [(ngModel)] = "registeredSelect">
-              <option value="Carrera">Carrera</option>
-              <option value="Reto">Reto</option>
-            </select>
-            <button type="submit" class="btn btn-primary" (click)="registerEvent()">Ir</button>
           </div>
         </div>
       </div>
