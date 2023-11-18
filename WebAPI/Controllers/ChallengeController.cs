@@ -27,8 +27,7 @@ namespace WebAPI.Controllers
             // Crea los parámetros necesarios para el stored procedure
             SqlParameter[] parameters = new SqlParameter[]
             {
-            new SqlParameter("@statementType", "Update"),
-            new SqlParameter("@id", challenge.id),
+            new SqlParameter("@statementType", "Create"),
             new SqlParameter("@activityName", challenge.activityName),
             new SqlParameter("@name", challenge.name),
             new SqlParameter("@period", challenge.period),
@@ -41,6 +40,7 @@ namespace WebAPI.Controllers
             await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<object>(storedProcedureName, parameters);
             return Ok();
         }
+
         //Get All Challenges
         [HttpGet]
         public async Task<IActionResult> GetAllChallenges()
@@ -52,7 +52,6 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "ReadAll"),
-            new SqlParameter("@id", DBNull.Value)  // Agrega un parámetro @id con un valor predeterminado
             };
 
             // Ejecuta el stored procedure y devuelve la lista de Sportmen

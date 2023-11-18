@@ -28,13 +28,12 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "Create"),
-            new SqlParameter("@id", race.id),
             new SqlParameter("@idActivity", race.idActivity),
             new SqlParameter("@activityType", race.activityType),
             new SqlParameter("@cost", race.cost),
             new SqlParameter("@bankAccount", race.bankAccount),
             new SqlParameter("@name", race.name),
-            new SqlParameter("@acess", race.access)
+            new SqlParameter("@access", race.access)
 
             };
 
@@ -53,7 +52,6 @@ namespace WebAPI.Controllers
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@statementType", "ReadAll"),
-            new SqlParameter("@id", DBNull.Value)  // Agrega un parámetro @id con un valor predeterminado
             };
 
             // Ejecuta el stored procedure y devuelve la lista de Sportmen
@@ -102,7 +100,7 @@ namespace WebAPI.Controllers
             new SqlParameter("@cost", race.cost),
             new SqlParameter("@bankAccount", race.bankAccount),
             new SqlParameter("@name", race.name),
-            new SqlParameter("@acess", race.access)
+            new SqlParameter("@access", race.access)
             };
 
             // Ejecuta el stored procedure y devuelve la respuesta
