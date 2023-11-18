@@ -1,0 +1,25 @@
+.friend-card {
+    position: relative;
+    left: 0px;
+    width: 226%;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 30px;
+}
+
+.card-text {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #98DFD6;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
