@@ -1,0 +1,16 @@
+<div class="container-md">
+    <div class="card friend-card">
+        <div class="card-body">
+            <h5 class="card-title"> {{activity.idSportman}} </h5>
+            <p style="font-size: 30px;" class="card-text"> Tipo de actividad: {{activity.activityName}} </p>
+            <h5> Publicado el: {{activity.dateAndTime}} </h5>
+            <h5> Kilometraje: {{activity.mileage}} </h5>
+        </div>
+
+        <div class="card-body">
+            <button class="btn btn-secondary me-md-2 button" type="button" (click)=viewComments()>
+                Comentar
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="row justify-content-center mt-4">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="row justify-content-center mt-4">
+                        <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
+                    </div>
+                    <h1 class="row justify-content-center mt-4"> Crear Cuenta</h1>
+                    <div class="card-body">
+                        <!-- [formGroup]="registerForm"-->
+                        <form>
+                            <div class="form-group">
+                                <label for="fullname">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingrese su Nombre" formControlName="name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname1">Primer Apellido:</label>
+                                <input type="text" class="form-control" id="lastname1" placeholder="Ingrese su Primer Apellido" formControlName="lastname1" />
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname2">Segundo Apellido:</label>
+                                <input type="text" class="form-control" id="lastname2" placeholder="Ingrese su Segundo Apellido" formControlName="lastname2" />
+                            </div>
+                            <div class="form-group">
+                                <label for="bDate">Facha de nacimiento:</label>
+                                <input type="text" class="form-control" id="bDate" placeholder="Formato solicitado 'día-mes-año'" formControlName="bDate" />
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Edad:</label>
+                                <input type="text" class="form-control" id="age" placeholder="Ingrese su edad" formControlName="age"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="nationality">Nacionalidad:</label>
+                                <input type="text" class="form-control" id="nationality" placeholder="Ingrese su Nacionalidad" formControlName="nationality"/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="photo">Foto:</label>
+                                <input type="file" class="form-control-file" id="photo" formControlName="photo"/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="contrasena">Contraseña:</label>
+                                <input type="password" class="form-control" id="contrasena"
+                                    placeholder="Ingrese su Contraseña"  formControlName="password"/>
+                            </div>
+                        </form>
+
+                        <div class="col justify-content-start mt-3">
+                            <button type="submit" class="btn btn-primary btn-block" (click)="submit()">
+                                Guardar
+                            </button>
+                        </div> 
+                        <div class="col justify-content-end mt-3">
+                            <button type="submit" class="btn btn-primary btn-block" (click)="back()">
+                                volver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

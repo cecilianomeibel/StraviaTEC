@@ -1,0 +1,39 @@
+<h1 class="page-title"> StraviaTEC </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8 user-card">
+      <!-- Card de usuario -->
+      <div class="card">
+        <img src="../../../assets/user.jpg" class="card-img-top" alt="Imagen de la tarjeta">
+        <div class="card-body">
+          <h5 class="card-title">My User</h5>
+          <p class="card-text">Mi perfil</p>
+          <a class="btn btn-primary" (click)="registerActivity()">Registrar actividad</a>
+          <a class="btn btn-primary" (click)="joinGroup()">Unirse a un grupo</a>
+          <p class="card-text">Ver mis:</p>
+          <div class="form-container">
+            <select class="form-select" id="registered-select" [(ngModel)] = "registeredSelect">
+              <option value="Carreras">Carreras</option>
+              <option value="Retos">Retos</option>
+            </select>
+            <button type="submit" class="btn btn-primary" (click)="getRegisteredEvent()">Ver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div *ngFor="let activity of userFeed">
+        <friend-card [activity]="activity"></friend-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
+  
+
+  
+  

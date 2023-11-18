@@ -1,0 +1,36 @@
+/* Agregar espacio en la parte superior e inferior del contenedor */
+.container {
+    margin-top: 20px;
+    /* Espacio en la parte superior */
+    margin-bottom: 20px;
+    /* Espacio en la parte inferior */
+}
+
+.card {
+    margin-top: 20px;
+    /* Espacio en la parte superior */
+    margin-bottom: 20px;
+    /* Espacio en la parte inferior */
+
+}
+
+.btn {
+    background-color: #98DFD6;
+    display: block;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+
+.custom-file-input {
+    background-color: #98DFD6;
+    display: block;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
