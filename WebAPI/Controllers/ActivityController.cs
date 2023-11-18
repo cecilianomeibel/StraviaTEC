@@ -61,29 +61,34 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateActivity([FromBody] Activity activity)
         {
-            // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_ACTIVITY_CRUD";
 
-            // Crea los parámetros necesarios para el stored procedure
             SqlParameter[] parameters = new SqlParameter[]
             {
-            new SqlParameter("@statementType", "Create"),
-            new SqlParameter("@id", activity.id),
-            new SqlParameter("@idSportman", activity.idSportman),
-            new SqlParameter("@activityName", activity.activityName),
-            new SqlParameter("@dateAndTime", activity.dateAndTime),
-            new SqlParameter("@mileage", activity.mileage),
-            new SqlParameter("@gpx", activity.gpx),
-            new SqlParameter("@eventType", activity.eventType),
-            new SqlParameter("@duration", activity.duration),
+                new SqlParameter("@statementType", "Create"),
+                new SqlParameter("@id", activity.id),
+                new SqlParameter("@idSportman", activity.idSportman),
+                new SqlParameter("@activityName", activity.activityName),
+                new SqlParameter("@dateAndTime", activity.dateAndTime),
+                new SqlParameter("@mileage", activity.mileage),
+                new SqlParameter("@gpx", activity.gpx),
+                new SqlParameter("@eventType", activity.eventType),
+                new SqlParameter("@duration", activity.duration),
             };
 
-            // Ejecuta el stored procedure y devuelve la respuesta
-            await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<object>(storedProcedureName, parameters);
-            return Ok();
+            Activity createdActivity = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Activity>(storedProcedureName, parameters);
+
+            if (createdActivity != null)
+            {
+                return Ok(createdActivity);
+            }
+            else
+            {
+                return BadRequest(); 
+            }
         }
 
-        
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateActivity(int id, [FromBody] Activity activity)
