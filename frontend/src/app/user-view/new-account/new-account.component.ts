@@ -20,4 +20,7 @@ export class NewAccountComponent {
   toggleEstudiante() {
 
   }
+  back() {
+    this.router.navigate(['/app-login']);
+  }
 }

@@ -12,16 +12,38 @@
                         <form>
                             <div class="form-group">
                                 <label for="usuario">Nombre:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Usuario" />
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Nombre" />
                             </div>
                             <div class="form-group">
-                                <label for="telefono">Teléfono:</label>
-                                <input type="text" class="form-control" id="number" placeholder="Ingrese su Telefono" />
+                                <label for="usuario">Primer Apellido:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Primer Apellido" />
                             </div>
                             <div class="form-group">
-                                <label for="contrasena">Correo:</label>
+                                <label for="usuario">Segundo Apellido:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Segundo Apellido" />
+                            </div>
+                            <div class="form-group">
+                                <label for="usuario">Facha de nacimiento:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Formato solicitado 'día-mes-año'" />
+                            </div>
+                            <div class="form-group">
+                                <label for="usuario">Edad:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su edad" />
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Nombre de Usuario:</label>
+                                <input type="text" class="form-control" id="number" placeholder="Ingrese su usuario" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contrasena">Nacionalidad:</label>
                                 <input type="text" class="form-control" id="email" placeholder="Ingrese su Correo" />
                             </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="contrasena">Foto:</label>
+                                <input type="file" class="form-control-file" id="foto" />
+                            </div>
+                            <br>
                             <div class="form-group">
                                 <label for="contrasena">Contraseña:</label>
                                 <input type="password" class="form-control" id="contrasena"
@@ -29,9 +51,14 @@
                             </div>
                         </form>
 
-                        <div class="col justify-content-center mt-3">
+                        <div class="col justify-content-start mt-3">
                             <button type="submit" class="btn btn-primary btn-block" (click)="submit()">
                                 Guardar
+                            </button>
+                        </div> 
+                        <div class="col justify-content-end mt-3">
+                            <button type="submit" class="btn btn-primary btn-block" (click)="back()">
+                                volver
                             </button>
                         </div>
                     </div>
