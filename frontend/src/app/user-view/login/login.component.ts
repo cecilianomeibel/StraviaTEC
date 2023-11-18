@@ -1,22 +1,8 @@
-/*
 import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent {
-
-}
-*/
-
-
-
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/Services/api-service';
+//import { LoginRequest } from 'src/app/Interfaces/?';
 
 @Component({
   selector: 'app-login',
@@ -25,15 +11,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: any;
-  constructor(private router: Router, private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
-  });
-  }
-  /*
+
     constructor(
-      private api: ApiService<LoginRequest>,
+      //private api: ApiService<LoginRequest>,
       private router: Router,
       private fb: FormBuilder
     ) {
@@ -42,15 +22,30 @@ export class LoginComponent {
         password: ['', Validators.required],
       });
     }
-    */
-
+    
+    login() {
+      /*
+      // Obtén las credenciales del formulario
+      const credentials: LoginRequest = this.loginForm.value;
+  
+      // Realiza la solicitud de inicio de sesión al backend
+      this.api.create('Login/UserLogin', credentials).subscribe(
+        (data: any) => {
+          sessionStorage.setItem('iduser', data.iduser);
+          sessionStorage.setItem('auth', 'true');
+          this.home();
+        },
+        (error: any) => {
+          console.error('Error al iniciar sesión:', error);
+        }
+      );
+      */
+    }
 
   newAccount() {
     this.router.navigate(['/app-new-account']);
   }
 
   home() {
-    const username = this.loginForm.get('email').value;
-    this.router.navigate(['/app-user-home'],  { queryParams: { username } });
-  }
-}
+    this.router.navigate(['/']);
+ } };

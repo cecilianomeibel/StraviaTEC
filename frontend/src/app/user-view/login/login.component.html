@@ -9,11 +9,11 @@
                     <h1 class="row justify-content-center mt-4"> Iniciar sesión </h1>
 
                     <div class="card-body">
-                        <!-- detro del tag form <form [formGroup]="loginForm" (ngSubmit)="login()">-->
+                        
                         <form [formGroup]="loginForm" (ngSubmit)="home()">
                             <div class="mb-3">
-                                <label for="usuario">Correo:</label>
-                                <input type="text" id="correo" placeholder="Ingrese su correo" class="form-control" formControlName="email"/>
+                                <label for="usuario">Usuario:</label>
+                                <input type="text" id="user" placeholder="Ingrese su correo" class="form-control" formControlName="user"/>
                             </div>
                             <div class="mb-3">
                                 <label for="contrasena">Contraseña:</label>
@@ -23,6 +23,11 @@
                             <div class="col justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary">
                                     Iniciar Sesión
+                                </button>
+                            </div>
+                            <div class="col justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary" (click)="home()">
+                                    Volver
                                 </button>
                             </div>
                             <div class="col justify-content-center mt-3">
