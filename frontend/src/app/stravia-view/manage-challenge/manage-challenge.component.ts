@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Sponsor } from 'src/app/Interfaces/sponsor';
+import { ApiService } from 'src/app/Services/api-service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-challenge',
@@ -7,15 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./manage-challenge.component.css']
 })
 export class ManageChallengeComponent {
-  executionList: any;
-  promotionList: any;
+  sponsorList: Sponsor[] = [];
+  manageCForm: FormGroup;
   editMode = false;
   //promotionForm: FormGroup;
-  constructor(private router: Router) {
+  constructor(
+    private sponsorApi: ApiService<Sponsor>,
+    private fb: FormBuilder
+  ) {
+    this.manageCForm = this.fb.group({
+      sponsor: ['', Validators.required],
+    });
   }
 
   ngOnInit() {
-
+    this.sponsorApi.getAll('Sponsor').subscribe((data) => {
+      this.sponsorList = data;
+    });
   }
   addGroup() {
 
@@ -35,10 +46,6 @@ export class ManageChallengeComponent {
 
   createNew() {
 
-  }
-
-  home() {
-    this.router.navigate(['/']);
   }
 
 }

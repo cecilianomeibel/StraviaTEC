@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Sponsor } from 'src/app/Interfaces/sponsor';
+import { ApiService } from 'src/app/Services/api-service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-race',
@@ -7,16 +10,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./manage-race.component.css']
 })
 export class ManageRaceComponent {
-  executionList: any;
-  promotionList: any;
+  sponsorList: Sponsor[] = [];
+  manageRForm: FormGroup;
   editMode = false;
-  //promotionForm: FormGroup;
-  constructor(private router: Router) {
+  constructor(
+    private sponsorApi: ApiService<Sponsor>,
+    private fb: FormBuilder
+    //private router: Router,
+    ) {
+      this.manageRForm = this.fb.group({
+        sponsor: ['', Validators.required],
+      });
   }
 
   ngOnInit() {
-
+    this.sponsorApi.getAll('Sponsor').subscribe((data) => {
+      this.sponsorList = data;
+    });
   }
+
 
   editRace() {
 
@@ -32,10 +44,6 @@ export class ManageRaceComponent {
 
   createNew() {
 
-  }
-
-  home() {
-    this.router.navigate(['/']);
   }
 
 }
