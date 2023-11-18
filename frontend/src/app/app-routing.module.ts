@@ -17,6 +17,7 @@ import { JoinGroupComponent } from './user-view/join-group/join-group.component'
 import { RegisteredRacesComponent } from './user-view/registered-races/registered-races.component';
 import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
 import { CommentComponent } from './user-view/comment/comment.component';
+import { ManageGroupComponent } from './stravia-view/manage-group/manage-group.component';
 
 const routes: Routes = [
   {
@@ -88,6 +89,11 @@ const routes: Routes = [
     path: 'app-manage-challenge',
     component: ManageChallengeComponent,
     title: 'Administrar retos'
+  },
+  {
+    path: 'app-manage-group',
+    component: ManageGroupComponent,
+    title: 'Manejar grupo'
   },
   {
     path: 'app-strav-login',
