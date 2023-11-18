@@ -24,7 +24,7 @@ export class StravHomeComponent {
   }
 
   manageGroups() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/app-manage-group']);
   }
   participantReport() {
     this.router.navigate(['/']);

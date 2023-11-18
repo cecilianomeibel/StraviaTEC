@@ -29,6 +29,7 @@ import { CommentComponent } from './user-view/comment/comment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ParticipantsReportComponent } from './stravia-view/participants-report/participants-report.component';
 import { PositionsReportComponent } from './stravia-view/positions-report/positions-report.component';
+import { ManageGroupComponent } from './stravia-view/manage-group/manage-group.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { PositionsReportComponent } from './stravia-view/positions-report/positi
     CommentComponent,
     ParticipantsReportComponent,
     PositionsReportComponent,
+    ManageGroupComponent,
   ],
   imports: [
     ReactiveFormsModule,

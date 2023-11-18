@@ -1,0 +1,39 @@
+.page-title {
+    margin-top: 20px;
+}
+  
+.title{
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #98DFD6;
+    display: block;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+.form-control-file {
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+
+}
+
+.form-control {
+    width:70%
+}
+
+.contenedor {
+    position: relative;
+    left: 20px
+}
+
+.title2 {
+    color:hsla(170, 60%, 40%, 0.9);
+    margin-top: 40px;
+}
+
