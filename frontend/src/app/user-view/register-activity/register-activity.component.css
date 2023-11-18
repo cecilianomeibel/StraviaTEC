@@ -24,6 +24,15 @@
     padding: 10px 20px;
 }
 
+.check {
+    background-color: white;
+    display: block;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    color: #00235B;
+    font-size: larger;
+    margin: 10px;
+}
+
 .form-control-file {
     font-size: larger;
     margin: 10px;

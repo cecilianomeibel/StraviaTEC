@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Challenge } from 'src/app/Interfaces/challenge';
+import { Race } from 'src/app/Interfaces/race';
+import { ApiService } from 'src/app/Services/api-service';
 
 @Component({
   selector: 'app-register-activity',
@@ -6,27 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-activity.component.css']
 })
 export class RegisterActivityComponent {
-  selectedDay: any;
-  selectedMonth: any;
   selectedActivity: any;
-  selectedEvent:any;
-
-  months: { value: number; name: string }[] = [
-    { value: 1, name: 'Enero' },
-    { value: 2, name: 'Febrero' },
-    { value: 3, name: 'Marzo' },
-    { value: 4, name: 'Abril' },
-    { value: 5, name: 'Mayo' },
-    { value: 6, name: 'Junio' },
-    { value: 7, name: 'Julio' },
-    { value: 8, name: 'Agosto' },
-    { value: 9, name: 'Septiembre' },
-    { value: 10, name: 'Octubre' },
-    { value: 11, name: 'Noviembre' },
-    { value: 12, name: 'Diciembre' },
-  ];
-
-  days: number[] = Array.from({ length: 31 }, (_, i) => i + 1);
+  registerForm: any;
+  racesList: Race[] = [];
+  challengesList: Challenge[] = [];
+  belongsTo: any;
 
   activities: {type: string}[] = [
     {type: "Correr"},
@@ -38,6 +26,41 @@ export class RegisterActivityComponent {
   ]
 
   events: any;
+  selectedEvent: any;
+
+  constructor(private fb: FormBuilder, private api: ApiService<Race>,) {
+    this.registerForm = this.fb.group({
+    fecha: ['', Validators.required],
+    hora: ['', Validators.required],
+    duracion: ['', Validators.required],
+    tipoActividad: ['', Validators.required],
+    kilometraje:['', Validators.required],
+    nombreEvento:['', Validators.required]
+  });
+}
+
+  ngOnInit(){
+      this.api.getAll('Race').subscribe(
+        (listaCarreras: Race[]) => {
+          this.racesList = listaCarreras;
+        },
+        (error: any) => {
+          console.error('Error fetching races:', error);
+        }
+      );
+      this.api.getAll('Challenge').subscribe(
+        (listaRetos: Challenge[]) => {
+          this.challengesList = listaRetos;
+        },
+        (error: any) => {
+          console.error('Error fetching challenges:', error);
+        }
+      );
+  }
+  
+  registerActivity(){
+    console.log(this.registerForm.value)
+  }
 
 
 

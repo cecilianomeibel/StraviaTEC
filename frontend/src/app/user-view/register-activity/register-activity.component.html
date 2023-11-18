@@ -1,25 +1,26 @@
 <div class="container">
     <h1 class="page-title"> Registrar actividad 📝</h1>
-    <form>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerActivity()">
 
     <div class="mb-3">
         <h5 for="Fecha" class="title">Fecha</h5>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control" formControlName="fecha">
     </div>
 
     <div class="mb-3">
         <h5 for="Hora" class="title">Hora</h5>
-        <input type="time" class="form-control">
+        <input type="time" class="form-control" formControlName="hora">
       </div>
   
     <div class="mb-3">
       <h5 for="Duración" class="title">Duración</h5>
-      <input type="time" step="1" class="form-control">
+      <input type="time" step="1" class="form-control" formControlName="duracion">
     </div>
 
     <!-- Selector para el tipo de actividad -->
     <h5 class="title">Seleccione el tipo de actividad</h5>
-    <select name="activity" class="select" [(ngModel)]="selectedActivity">
+    <select name="activity" class="select" formControlName="tipoActividad">
         <option value="" disabled selected> Tipo de actividad </option>
         <option *ngFor="let activity of activities">
         {{ activity.type }}
@@ -28,7 +29,7 @@
 
     <div class="mb-3">
         <h5 for="Km" class="title">Kilometraje</h5>
-        <input type="number" min="0" step="0.01" class="form-control">
+        <input type="number" min="0" step="0.01" class="form-control" formControlName="kilometraje">
       </div>
 
     <div class="mb-3" enctype="multipart/form-data">
@@ -36,15 +37,23 @@
         <input type="file" class="form-control-file archivo" id="archivo" name="archivo">
     </div>
 
-    <h5 class="title">Seleccione el reto o carrera al que pertenece</h5>
-    <p class="text">En caso de que pertenezca a alguno, de lo contrario no seleccione ninguna opción</p>
-    <select name="activity" class="select" [(ngModel)]="selectedEvent">
-        <option value="" disabled selected> Reto/Carrera </option>
-        <option *ngFor="let event of events">
-        {{ event.name }}
+    <p class="text">¿Pertenece a una carrera existente?</p>
+    <select name="activity" class="select" formControlName="nombreEvento">
+        <option value="" disabled selected> Carrera </option>
+        <option *ngFor="let race of racesList">
+        {{ race.id }}
+        </option>
+    </select>
+
+    <p class="text">¿Pertenece a un reto existente?</p>
+    <select name="activity" class="select" formControlName="nombreEvento">
+        <option value="" disabled selected> Carrera </option>
+        <option *ngFor="let challenge of challengesList">
+        {{ challenge.id }}
         </option>
     </select>
 
     <button type="submit" class="btn btn-primary">Registrar</button>
   </form>
+
 </div>
