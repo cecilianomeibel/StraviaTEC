@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,6 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./friend-card.component.css'],
 })
 export class FriendCardComponent {
+  @Input() activity!: {    
+    id: number;
+    idSportman: string; //usuario
+    activityName: string;
+    dateAndTime: string;
+    mileage: number;
+    gpx: string;
+    eventType: string;
+    duration: string};
+
   constructor(
     private router: Router
   ){}

@@ -14,6 +14,7 @@ export class LoginComponent {
 
 
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -24,8 +25,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: any;
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
   }
   /*
     constructor(
@@ -46,6 +50,7 @@ export class LoginComponent {
   }
 
   home() {
-    this.router.navigate(['/']);
+    const username = this.loginForm.get('email').value;
+    this.router.navigate(['/app-user-home'],  { queryParams: { username } });
   }
 }

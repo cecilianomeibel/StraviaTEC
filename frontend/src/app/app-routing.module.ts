@@ -20,7 +20,7 @@ import { CommentComponent } from './user-view/comment/comment.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'app-user-home',
     component: UserHomeComponent,
     title: 'Inicio',
   },
@@ -35,7 +35,7 @@ const routes: Routes = [
     title: 'Registrar actividad'
   },
   {
-    path: 'app-login',
+    path: '',
     component: LoginComponent,
     title: 'Cuenta Inicio'
   },

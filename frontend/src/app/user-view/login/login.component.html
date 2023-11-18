@@ -10,15 +10,15 @@
 
                     <div class="card-body">
                         <!-- detro del tag form <form [formGroup]="loginForm" (ngSubmit)="login()">-->
-                        <form>
+                        <form [formGroup]="loginForm" (ngSubmit)="home()">
                             <div class="mb-3">
                                 <label for="usuario">Correo:</label>
-                                <input type="text" id="correo" placeholder="Ingrese su correo" class="form-control" />
+                                <input type="text" id="correo" placeholder="Ingrese su correo" class="form-control" formControlName="email"/>
                             </div>
                             <div class="mb-3">
                                 <label for="contrasena">Contraseña:</label>
                                 <input type="password" id="password" placeholder="Ingrese su contraseña"
-                                    class="form-control" />
+                                    class="form-control" formControlName="password" />
                             </div>
                             <div class="col justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary">

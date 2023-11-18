@@ -22,9 +22,9 @@
       </div>
     </div>
     <div class="col-4">
-      <!-- Cards de amigos (iterativo) -->
-      <friend-card></friend-card>
-      <friend-card></friend-card>
+      <div *ngFor="let activity of userFeed">
+        <friend-card [activity]="activity"></friend-card>
+      </div>
     </div>
   </div>
 </div>
