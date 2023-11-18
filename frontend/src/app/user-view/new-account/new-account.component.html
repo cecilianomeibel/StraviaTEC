@@ -11,43 +11,39 @@
                         <!-- [formGroup]="registerForm"-->
                         <form>
                             <div class="form-group">
-                                <label for="usuario">Nombre:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Nombre" />
+                                <label for="fullname">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingrese su Nombre" formControlName="name" />
                             </div>
                             <div class="form-group">
-                                <label for="usuario">Primer Apellido:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Primer Apellido" />
+                                <label for="lastname1">Primer Apellido:</label>
+                                <input type="text" class="form-control" id="lastname1" placeholder="Ingrese su Primer Apellido" formControlName="lastname1" />
                             </div>
                             <div class="form-group">
-                                <label for="usuario">Segundo Apellido:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su Segundo Apellido" />
+                                <label for="lastname2">Segundo Apellido:</label>
+                                <input type="text" class="form-control" id="lastname2" placeholder="Ingrese su Segundo Apellido" formControlName="lastname2" />
                             </div>
                             <div class="form-group">
-                                <label for="usuario">Facha de nacimiento:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Formato solicitado 'día-mes-año'" />
+                                <label for="bDate">Facha de nacimiento:</label>
+                                <input type="text" class="form-control" id="bDate" placeholder="Formato solicitado 'día-mes-año'" formControlName="bDate" />
                             </div>
                             <div class="form-group">
-                                <label for="usuario">Edad:</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su edad" />
+                                <label for="age">Edad:</label>
+                                <input type="text" class="form-control" id="age" placeholder="Ingrese su edad" formControlName="age"/>
                             </div>
                             <div class="form-group">
-                                <label for="telefono">Nombre de Usuario:</label>
-                                <input type="text" class="form-control" id="number" placeholder="Ingrese su usuario" />
-                            </div>
-                            <div class="form-group">
-                                <label for="contrasena">Nacionalidad:</label>
-                                <input type="text" class="form-control" id="email" placeholder="Ingrese su Correo" />
+                                <label for="nationality">Nacionalidad:</label>
+                                <input type="text" class="form-control" id="nationality" placeholder="Ingrese su Nacionalidad" formControlName="nationality"/>
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="contrasena">Foto:</label>
-                                <input type="file" class="form-control-file" id="foto" />
+                                <label for="photo">Foto:</label>
+                                <input type="file" class="form-control-file" id="photo" formControlName="photo"/>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="contrasena">Contraseña:</label>
                                 <input type="password" class="form-control" id="contrasena"
-                                    placeholder="Ingrese su Contraseña" />
+                                    placeholder="Ingrese su Contraseña"  formControlName="password"/>
                             </div>
                         </form>
 
