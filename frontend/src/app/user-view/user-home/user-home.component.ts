@@ -26,6 +26,7 @@ export class UserHomeComponent {
       this.username = params['username'];
       if (this.username) {
         this.loadUserFeed();
+        console.log(this.username)
       }
     });
   }
