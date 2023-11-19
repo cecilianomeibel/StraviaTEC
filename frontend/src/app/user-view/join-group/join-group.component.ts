@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Groups } from 'src/app/Interfaces/group';
 import { ApiService } from 'src/app/Services/api-service';
 
 @Component({
@@ -9,22 +10,23 @@ import { ApiService } from 'src/app/Services/api-service';
 })
 export class JoinGroupComponent {
   constructor(
-    private router: Router
-    //private api: ApiService<Group>
+    private router: Router,
+    private api: ApiService<Groups>
   ){}
 
   selectedGroup: any;
+  groups: any;
 
-  /**ngOnInit(){
-    this.api.getById('Group', this.username).subscribe(
-      (userFeed: feed[]) => {
-        this.userFeed = userFeed;
+  ngOnInit(){
+    this.api.getAll('Groups').subscribe(
+      (groups: Groups[]) => {
+        this.groups = groups;
       },
       (error: any) => {
-        console.error('Error fetching user feed:', error);
+        console.error('Error fetching groups', error);
       }
     );
-  }**/
+  }
 
   goHome(){
     this.router.navigate(['/app-user-home']);
