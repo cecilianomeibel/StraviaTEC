@@ -3,7 +3,7 @@
     public class Groups
     {
         public string name { get; set; }
-        public string idsportman { get; set; }
+        public string idSportman { get; set; }
 
     }
 }
