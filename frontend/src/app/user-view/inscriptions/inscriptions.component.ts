@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Challenge } from 'src/app/Interfaces/challenge';
+import { Race } from 'src/app/Interfaces/race';
+import { ApiService } from 'src/app/Services/api-service';
 
 @Component({
   selector: 'app-inscriptions',
@@ -6,5 +9,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./inscriptions.component.css']
 })
 export class InscriptionsComponent {
+  selectedActivity: any;
+  racesList: any;
+  challengesList: any;
+  constructor(private RaceApi: ApiService<Race>, private ChallengeApi: ApiService<Challenge>) {
+
+}
+
+ngOnInit(){
+  this.RaceApi.getAll('Race').subscribe(
+    (listaCarreras: Race[]) => {
+      this.racesList = listaCarreras;
+      console.log(this.racesList);
+    },
+    (error: any) => {
+      console.error('Error fetching races:', error);
+    }
+  );
+  this.ChallengeApi.getAll('Challenge').subscribe(
+    (listaRetos: Challenge[]) => {
+      this.challengesList = listaRetos;
+      console.log(this.challengesList);
+    },
+    (error: any) => {
+      console.error('Error fetching challenges:', error);
+    }
+  );
+}
 
 }

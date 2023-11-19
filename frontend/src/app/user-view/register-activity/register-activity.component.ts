@@ -28,7 +28,7 @@ export class RegisterActivityComponent {
   events: any;
   selectedEvent: any;
 
-  constructor(private fb: FormBuilder, private api: ApiService<Race>,) {
+  constructor(private fb: FormBuilder, private RaceApi: ApiService<Race>, private ChallengeApi: ApiService<Challenge>) {
     this.registerForm = this.fb.group({
     fecha: ['', Validators.required],
     hora: ['', Validators.required],
@@ -40,7 +40,7 @@ export class RegisterActivityComponent {
 }
 
   ngOnInit(){
-      this.api.getAll('Race').subscribe(
+      this.RaceApi.getAll('Race').subscribe(
         (listaCarreras: Race[]) => {
           this.racesList = listaCarreras;
         },
@@ -48,7 +48,7 @@ export class RegisterActivityComponent {
           console.error('Error fetching races:', error);
         }
       );
-      this.api.getAll('Challenge').subscribe(
+      this.ChallengeApi.getAll('Challenge').subscribe(
         (listaRetos: Challenge[]) => {
           this.challengesList = listaRetos;
         },
