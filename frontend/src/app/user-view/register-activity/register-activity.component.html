@@ -41,7 +41,7 @@
     <select name="activity" class="select" formControlName="nombreEvento">
         <option value="" disabled selected> Carrera </option>
         <option *ngFor="let race of racesList">
-        {{ race.id }}
+        {{ race.name }}
         </option>
     </select>
 
@@ -49,7 +49,7 @@
     <select name="activity" class="select" formControlName="nombreEvento">
         <option value="" disabled selected> Reto </option>
         <option *ngFor="let challenge of challengesList">
-        {{ challenge.id }}
+        {{ challenge.name }}
         </option>
     </select>
 

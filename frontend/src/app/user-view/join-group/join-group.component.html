@@ -2,7 +2,7 @@
 <div class="container">
     <h3 class="select-title">Seleccione el grupo al que desea unirse </h3>
     <div class="form-container">
-        <select class="form-select" id="custom-select">
+        <select class="form-select" id="custom-select" [(ngModel)] = "selectedGroup">
         <option value="1">Grupo 1</option>
         </select>
         <button type="submit" class="btn btn-primary">Unirme</button>
