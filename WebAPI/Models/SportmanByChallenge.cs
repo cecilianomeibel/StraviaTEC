@@ -4,6 +4,6 @@ namespace WebAPI.Models
     {
         public int idChallenge { get; set; }
         public string usernameSportman { get; set; }
-        public string progress { get; set; }
+        public double progress { get; set; }
     }
 }

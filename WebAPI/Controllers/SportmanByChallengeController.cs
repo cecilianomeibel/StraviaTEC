@@ -16,23 +16,47 @@ namespace WebAPI.Controllers
             _sqlServerConnector = sqlServerConnector;
         }
 
+        //Create
+        [HttpPost]
+        public async Task<IActionResult> CreateSportmanByChallenge([FromBody] SportmanByChallenge sportmanByChallenge)
+        {
+            // Asegúrate de que el nombre del stored procedure sea correcto
+            string storedProcedureName = "SP_SPORTMAN_BY_CHALLENGE";
+
+            // Crea los parámetros necesarios para el stored procedure
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@statementType", "Create"),
+            new SqlParameter("@idChallenge", sportmanByChallenge.idChallenge),
+            new SqlParameter("@usernameSportman", sportmanByChallenge.usernameSportman),
+            new SqlParameter("@progress", sportmanByChallenge.progress)         
+            };
+
+            // Ejecuta el stored procedure y devuelve la respuesta
+            await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<object>(storedProcedureName, parameters);
+            return Ok();
+        }
+        //Get challenge by username
         [HttpGet("{usernameSportman}")]
         public async Task<IActionResult> GetChallengeBySportman(string usernameSportman)
         {
             // Ensure the name of the stored procedure is correct
-            string storedProcedureName = "SP_GET_CHALLENGEID_BY_SPORTMAN";
+            string storedProcedureName = "SP_SPORTMAN_BY_CHALLENGE";
 
             // Create the parameters for the stored procedure
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@usernameSportman", usernameSportman)
+            new SqlParameter("@statementType", "ReadOnlyOne"),
+            new SqlParameter("@usernameSportman", usernameSportman)
             };
 
-            // Execute the stored procedure and retrieve the list of challenge IDs
-            List<int> challengeIDs = await _sqlServerConnector.ExecuteStoredProcedureListAsync<int>(storedProcedureName, parameters);
+            // Execute the stored procedure and retrieve the list of SportmanByChallengeModel objects
+            List<SportmanByChallenge> challenges = await _sqlServerConnector.ExecuteStoredProcedureListAsync<SportmanByChallenge>(storedProcedureName, parameters);
 
-            // Return the list of challenge IDs
-            return Ok(challengeIDs);
+            // Return the list of challenges
+            return Ok(challenges);
         }
+
+
     }
 }
