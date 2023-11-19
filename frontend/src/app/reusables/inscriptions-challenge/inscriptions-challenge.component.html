@@ -8,22 +8,22 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Periodo ( días )</th>
-                <th>Tipo de Actividad (km)</th>
-                <th>Categoría?</th>
-                <th>Tipo de Evento</th>
-                <th>Patrocinadores</th>
+                <th>Actividad</th>
+                <th>Periodo</th>
+                <th>Tipo de Actividad</th>
+                <th>Acceso</th>
+                
             </tr>
         </thead>
         <tbody>
             <!-- *ngFor="let promotion of promotionList" -->
             <tr>
-                <td>tecRace</td>
-                <td>jueves</td>
-                <td>recorrido</td>
-                <td>talamanca-san jose</td>
-                <td>privada</td>
-                <td>gucci</td>
+                <td>{{inscriptionC.name}}</td>
+                <td>{{inscriptionC.activityType}}</td>
+                <td>{{inscriptionC.period}}</td>
+                <td>{{inscriptionC.type}}</td>
+                <td>{{inscriptionC.access}}</td>
+                
                 <td>
                     <button class="btn btn-sm btn-info" (click)="inscription()">
                         Inscribir

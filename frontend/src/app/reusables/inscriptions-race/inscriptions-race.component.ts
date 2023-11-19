@@ -1,11 +1,4 @@
-import { Component } from '@angular/core';
-import { NgSelectModule } from '@ng-select/ng-select';
-import {
-  FormBuilder,
-  FormGroup,
-  FormsModule,
-  Validators,
-} from '@angular/forms';
+import { Component,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -18,10 +11,18 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 })
 export class InscriptionsRaceComponent {
 
+  @Input() inscriptionR!: {    
+    id: number;
+    idActivity: number;
+    activityType: string;
+    cost: number;
+    bankAccount: string;
+    name: string;
+    access: string;};
 
-
-  constructor(private router: Router) {
-  }
+  constructor(
+    private router: Router
+  ){}
 
   inscription(nombreCarrera: string) {
     const carreraInfo = {

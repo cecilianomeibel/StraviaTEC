@@ -8,26 +8,21 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Recorrido</th>
-                <th>Tipo de Actividad</th>
-                <th>Tipo de Carrera</th>
+                <th>Actividad</th>
                 <th>Costo</th>
-                <th>Categoría</th>
-                <th>Patrocinadores</th>
+                <th>Cuenta Bancaria</th>
+                <th>Acceso</th>
+              
             </tr>
         </thead>
         <tbody>
             <!-- *ngFor="let promotion of promotionList" -->
             <tr>
-                <td>tecRace</td>
-                <td>jueves</td>
-                <td>recorrido</td>
-                <td>talamanca-san jose</td>
-                <td>privada</td>
-                <td>10.000</td>
-                <td>nadar</td>
-                <td>gucci</td>
+                <td>{{inscriptionR.name}}</td>
+                <td>{{inscriptionR.activityType}}</td>
+                <td>{{inscriptionR.cost}}</td>
+                <td>{{inscriptionR.bankAccount}}</td>
+                <td>{{inscriptionR.access}}</td>
                 <td>
                 </td>
 

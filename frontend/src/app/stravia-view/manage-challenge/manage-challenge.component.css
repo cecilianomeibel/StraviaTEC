@@ -16,14 +16,14 @@
 }
 
 
-.form-select,
-.form-control {
+.form-select {
     border: 2px solid hsla(170, 60%, 40%, 0.6);
     height: 30px;
     width: 250px;
 }
 
-.input-select {
+.input-select,
+.form-control {
     border: 2px solid hsla(170, 60%, 40%, 0.6);
     height: 30px;
     width: 250px;

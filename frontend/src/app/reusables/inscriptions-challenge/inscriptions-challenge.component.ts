@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,12 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./inscriptions-challenge.component.css']
 })
 export class InscriptionsChallengeComponent {
-  constructor(private router: Router) {
-  }
+  @Input() inscriptionC!: {    
+    id: number;
+    activityType: string;
+    name: string;
+    period: string;
+    type: string;
+    access: string;};
+
+  constructor(
+    private router: Router
+  ){}
 
   inscription() {
 
   }
-
-
 }
