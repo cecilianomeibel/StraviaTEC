@@ -20,7 +20,7 @@ ngOnInit(){
   this.RaceApi.getAll('Race').subscribe(
     (listaCarreras: Race[]) => {
       this.racesList = listaCarreras;
-      console.log(this.racesList);
+      
     },
     (error: any) => {
       console.error('Error fetching races:', error);
@@ -29,7 +29,7 @@ ngOnInit(){
   this.ChallengeApi.getAll('Challenge').subscribe(
     (listaRetos: Challenge[]) => {
       this.challengesList = listaRetos;
-      console.log(this.challengesList);
+      
     },
     (error: any) => {
       console.error('Error fetching challenges:', error);

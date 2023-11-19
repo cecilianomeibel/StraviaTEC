@@ -1,9 +1,5 @@
 <div class="container mt-3">
-    <div class="row justify-content-center mt-4">
 
-        <h1 class="text-center">Retos</h1>
-
-    </div>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -12,6 +8,8 @@
                 <th>Periodo</th>
                 <th>Tipo de Actividad</th>
                 <th>Acceso</th>
+                <th>Categoria</th>
+                <th>Patrocinio</th>
                 
             </tr>
         </thead>
@@ -23,6 +21,10 @@
                 <td>{{inscriptionC.period}}</td>
                 <td>{{inscriptionC.type}}</td>
                 <td>{{inscriptionC.access}}</td>
+                <td *ngFor="let category of category">
+                    {{ category.nameCategory }}</td>
+                <td *ngFor="let sponsor of sponsorList">
+                {{ sponsor.sponsorName }}</td>
                 
                 <td>
                     <button class="btn btn-sm btn-info" (click)="inscription()">
