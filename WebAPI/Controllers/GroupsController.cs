@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
             {
                 new SqlParameter("@statementType", "Create"),
                 new SqlParameter("@name", group.name),
-                new SqlParameter("@@idSportman", group.idSportman)
+                new SqlParameter("@idSportman", group.idSportman)
             };
 
 
