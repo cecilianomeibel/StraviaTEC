@@ -27,9 +27,9 @@ namespace WebAPI.Controllers
             // Crea los parámetros necesarios para el stored procedure
             SqlParameter[] parameters = new SqlParameter[]
             {
-            new SqlParameter("@statementType", "Update"),
+            new SqlParameter("@statementType", "Create"),
             new SqlParameter("@id", challenge.id),
-            new SqlParameter("@activityName", challenge.activityName),
+            new SqlParameter("@activityType", challenge.activityType),
             new SqlParameter("@name", challenge.name),
             new SqlParameter("@period", challenge.period),
             new SqlParameter("@type", challenge.type),
@@ -96,7 +96,7 @@ namespace WebAPI.Controllers
             {
             new SqlParameter("@statementType", "Update"),
             new SqlParameter("@id", id),
-            new SqlParameter("@activityName", challenge.activityName),
+            new SqlParameter("@activityType", challenge.activityType),
             new SqlParameter("@name", challenge.name),
             new SqlParameter("@period", challenge.period),
             new SqlParameter("@type", challenge.type),
@@ -131,7 +131,3 @@ namespace WebAPI.Controllers
 
     }
 }
-
-
-
-

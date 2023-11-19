@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
             new SqlParameter("@cost", race.cost),
             new SqlParameter("@bankAccount", race.bankAccount),
             new SqlParameter("@name", race.name),
-            new SqlParameter("@acess", race.access)
+            new SqlParameter("@access", race.access)
 
             };
 
@@ -102,7 +102,7 @@ namespace WebAPI.Controllers
             new SqlParameter("@cost", race.cost),
             new SqlParameter("@bankAccount", race.bankAccount),
             new SqlParameter("@name", race.name),
-            new SqlParameter("@acess", race.access)
+            new SqlParameter("@access", race.access)
             };
 
             // Ejecuta el stored procedure y devuelve la respuesta

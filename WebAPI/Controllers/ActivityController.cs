@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 using WebAPI.Models;
 using WebAPI.Utils;
 
@@ -63,29 +64,37 @@ namespace WebAPI.Controllers
         {
             string storedProcedureName = "SP_ACTIVITY_CRUD";
 
-            SqlParameter[] parameters = new SqlParameter[]
+            // Define the output parameter for ID
+            SqlParameter idParameter = new SqlParameter
             {
-                new SqlParameter("@statementType", "Create"),
-                new SqlParameter("@id", activity.id),
-                new SqlParameter("@idSportman", activity.idSportman),
-                new SqlParameter("@activityName", activity.activityName),
-                new SqlParameter("@dateAndTime", activity.dateAndTime),
-                new SqlParameter("@mileage", activity.mileage),
-                new SqlParameter("@gpx", activity.gpx),
-                new SqlParameter("@eventType", activity.eventType),
-                new SqlParameter("@duration", activity.duration),
+                ParameterName = "@id",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Output
             };
 
-            Activity createdActivity = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Activity>(storedProcedureName, parameters);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@statementType", "Create"),
+            idParameter,  // Use the output parameter here
+            new SqlParameter("@activityType", activity.activityType),
+            new SqlParameter("@dateAndTime", activity.dateAndTime),
+            new SqlParameter("@mileage", activity.mileage),
+            new SqlParameter("@gpx", activity.gpx),
+            new SqlParameter("@eventType", activity.eventType),
+            new SqlParameter("@duration", activity.duration),
+            };
 
-            if (createdActivity != null)
-            {
-                return Ok(createdActivity);
-            }
-            else
-            {
-                return BadRequest(); 
-            }
+            // Execute the stored procedure
+            await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<object>(storedProcedureName, parameters);
+
+            // Retrieve the ID from the output parameter
+            int createdActivityId = Convert.ToInt32(idParameter.Value);
+
+            // Optionally, you can query the database to get the complete object using the created ID
+            // var createdActivity = await _dbContext.ACTIVITY.FindAsync(createdActivityId);
+
+            // Return the ID or the complete object based on your requirements
+            return Ok(createdActivityId);
         }
 
 
@@ -102,8 +111,7 @@ namespace WebAPI.Controllers
             
             new SqlParameter("@statementType", "Update"),
             new SqlParameter("@id", id),
-            new SqlParameter("@idSportman", activity.idSportman),
-            new SqlParameter("@activityName", activity.activityName),
+            new SqlParameter("@activityType", activity.activityType),
             new SqlParameter("@dateAndTime", activity.dateAndTime),
             new SqlParameter("@mileage", activity.mileage),
             new SqlParameter("@gpx", activity.gpx),
@@ -117,7 +125,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSportman(int id)
+        public async Task<IActionResult> DeleteActivity(int id)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_ACTIVITY_CRUD";
