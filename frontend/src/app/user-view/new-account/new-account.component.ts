@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/Services/api-service';
-import { Sportman } from 'src/app/Interfaces/sportmain';
+import { Sportman } from 'src/app/Interfaces/sportman';
 
 @Component({
   selector: 'app-new-account',

@@ -18,6 +18,7 @@ import { RegisteredRacesComponent } from './user-view/registered-races/registere
 import { RegisteredChallengesComponent } from './user-view/registered-challenges/registered-challenges.component';
 import { CommentComponent } from './user-view/comment/comment.component';
 import { ManageGroupComponent } from './stravia-view/manage-group/manage-group.component';
+import { ParticipantsReportComponent } from './stravia-view/participants-report/participants-report.component';
 
 const routes: Routes = [
   {
@@ -109,6 +110,11 @@ const routes: Routes = [
     path: 'app-inscriptions-race',
     component: InscriptionsRaceComponent,
     title: 'inscribir carrera'
+  },
+  {
+    path: "app-participants-report",
+    component: ParticipantsReportComponent,
+    title: 'Reporte de participantes'
   }
 ];
 

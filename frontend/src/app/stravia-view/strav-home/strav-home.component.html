@@ -40,7 +40,13 @@
     <div class="card-body d-flex justify-content-center align-items-center">
         <h4 class="card-title">Reportes de Participación</h4>
         <p class="card-text">Listas de participantes</p>
-        <a class="btn btn-primary" (click)="participantReport()">Ir</a>
+        <form (ngSubmit)="participantReport()">
+            <div class="mb-3">
+                <h5 for="id" class="title">Id de la carrera: </h5>
+                <input type="text" class="form-control" [(ngModel)]="RaceId" name="id">
+            </div>
+            <button type="submit" class="btn btn-primary">Ir</button>
+        </form>
     </div>
 </div>
 

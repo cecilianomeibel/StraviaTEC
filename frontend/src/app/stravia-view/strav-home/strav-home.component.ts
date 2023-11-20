@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class StravHomeComponent {
   constructor(private router: Router) { }
+  RaceId: any;
 
 
   manageRace() {
@@ -27,7 +28,8 @@ export class StravHomeComponent {
     this.router.navigate(['/app-manage-group']);
   }
   participantReport() {
-    this.router.navigate(['/']);
+    const RaceId = this.RaceId
+    this.router.navigate(['/app-participants-report'], { queryParams: { RaceId } });
   }
   PositionRace() {
     this.router.navigate(['/']);
