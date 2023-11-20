@@ -1,7 +1,6 @@
 export class Activity {
     id?: number;
-    idSportman?: string;
-    activityName?: string;
+    activityType?: string;
     dateAndTime?: Date;
     mileage?: number;
     gpx?: string;

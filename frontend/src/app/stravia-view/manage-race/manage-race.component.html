@@ -1,153 +1,68 @@
-<div class="container mt-3">
-    <div class="row justify-content-center mt-4">
-        <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
-        <h1 class="text-center">Crear Carreras</h1>
+<div class="container contenedor">
+    <h1 class="page-title"> Gestion de carreras 🏁</h1>
+    
+    <h3 class="title2">Crear una carrera</h3>
+        <form [formGroup]="createForm" (ngSubmit)="createRace()">
+            <div class="mb-3">
+                <h5 for="nombre" class="title">Tipo de actividad: </h5>
+                <input type="text" class="form-control" formControlName="activityType">
+            </div>
+    
+            <div class="mb-3">
+                <h5 for="admin" class="title">Precio: </h5>
+                <input type="text" class="form-control" formControlName="cost">
+            </div>
 
-    </div>
-    <!-- inputs completo <input type="number" id="price" formControlName="price" required /> -->
+            <div class="mb-3">
+                <h5 for="admin" class="title">Vuenta Bancaria: </h5>
+                <input type="text" class="form-control" formControlName="bankAccount">
+            </div>
 
-  <form [formGroup]="manageRForm" (ngSubmit)="saveRace()"> 
-    <div class="container mt-5">
+            <div class="mb-3">
+                <h5 for="admin" class="title">Nombre: </h5>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+
+            <div class="mb-3">
+                <h5 for="admin" class="title">Acceso: </h5>
+                <input type="text" class="form-control" formControlName="access">
+            </div>
+
+            <div class="mb-3">
+                <h5 for="admin" class="title">Fecha: </h5>
+                <input type="text" class="form-control" formControlName="date">
+            </div>
         
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- <div class="form-group">-->
-                    <div>
-                        <label for="idrace">ID de Carrera:</label>
-                        <select class="form-select" id="idarace">
-
-                        </select>
-                    </div>
-                </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
+    
+    <h3 class="title2">Modificar un grupo</h3>
+    
+        <form [formGroup]="modifyForm" (ngSubmit)="modifyGroup()">
+            <div class="mb-3">
+                <h5 for="id" class="title">Nombre del grupo: </h5>
+                <input type="text" class="form-control" formControlName="id">
             </div>
-            <div class="row">
-                <div class="form-container" class="col-md-6">
-                    <!-- <div class="form-group">-->
-
-                    <div>
-                        <label for="idactivity">Tipo de Actividad:</label>
-                        <select class="form-select" id="idactivity">
-                            <option value="0">Selecciona una Actividad</option>
-                            <option>Competencia</option>
-                            <option>Reto</option>
-
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="idevent">Tipo de evento:</label>
-                        <select class="form-select" id="idevent">
-                            <option value="0">Selecciona un Evento</option>
-                            <option>privado</option>
-                            <option>público</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="idcategory">Categoría:</label>
-                        <select class="form-select" id="idcatgory">
-                            <option value="0">Selecciona una Categoría</option>
-                            <option>Senderismo</option>
-                            <option>Ruta en Bicicleta</option>
-
-                        </select>
-                    </div>
-                    <div>
-                        <label for="sponsorName">Selecciona un patrocinador:</label>
-                        
-                        <select id="sponsorName"
-                        class="form-control"
-                        formControlName="sponsorName"
-                        required>
-                            <option *ngFor="let sponsor of sponsorList"
-                            [value]="sponsor.sponsorName">
-                                {{ sponsor.sponsorName }}
-                              </option>
-
-                        </select>
-                    </div>
-
-
-
-                </div>
-                <div class="col-md-6">
-                    <div>
-                        <label for="date">Fecha:</label>
-                        <input class="input-select" type="text" id="date" />
-                    </div>
-                    <br>
-                    <div>
-                        <label for="name">Nombre:</label>
-                        <input class="input-select" type="text" id="name" />
-                    </div>
-                    <br>
-                    <div>
-                        <label for="price">Costo:</label>
-                        <input class="input-select" type="text" id="price" />
-                    </div>
-                    <br>
-                    <div>
-                        <label for="accpunt">Cuenta Bancaria:</label>
-                        <input class="input-select" type="text" id="account" />
-                    </div>
-                </div>
-
-
+    
+            <div class="mb-3">
+                <h5 for="nombre" class="title">Nombre: </h5>
+                <input type="text" class="form-control" formControlName="name">
             </div>
-
-            
-            <!-- <div class="form-group">-->
-            <div>
-
-                <button type="button" class="btn btn1" (click)="createNew()">
-                    Crear
-                </button>
+    
+            <div class="mb-3">
+                <h5 for="admin" class="title">Administrador: </h5>
+                <input type="text" class="form-control" formControlName="admin">
             </div>
-    </div>
+        
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
-    </div>
-
-    <!-- Lista de promociones de aire -->
-    <div class="row justify-content-center mt-4">
-
-        <h1 class="text-center">Carreras Registradas</h1>
-
-    </div>
-    <table class="table mt-4">
-        <thead>
-            <tr>
-                <th>ID Carrera</th>
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Recorrido</th>
-                <th>Tipo de Actividad</th>
-                <th>Tipo de Carrera</th>
-                <th>Costo</th>
-                <th>Cuenta</th>
-                <th>Categoría</th>
-                <th>Patrocinadores</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- *ngFor="let promotion of promotionList" -->
-            <tr>
-                <td>id</td>
-                <td>tecRace</td>
-                <td>jueves</td>
-                <td>recorrido</td>
-                <td>talamanca-san jose</td>
-                <td>privada</td>
-                <td>10000</td>
-                <td>1-234-565</td>
-                <td>nadar</td>
-                <td>gucci</td>
-                <td>
-                    <button class="btn btn-sm btn-info" (click)="editRace()">
-                        Editar
-                    </button>
-                    <button class="btn btn-sm btn-danger" (click)="deleteRace()">
-                        Eliminar
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
+    <h3 class="title2">Eliminar un grupo</h3>
+        <form [formGroup]="deleteForm" (ngSubmit)="deleteGroup()">
+            <div class="mb-3">
+                <h5 for="id" class="title">Nombre del grupo: </h5>
+                <input type="text" class="form-control" formControlName="id">
+            </div>
+            <button type="submit" class="btn btn-primary">Eliminar</button>
+        </form>
+    </div> 
