@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { Sportman } from 'src/app/Interfaces/sportmain';
+import { Sportman } from 'src/app/Interfaces/sportman';
 import { ApiService } from 'src/app/Services/api-service';
 import { FormsModule } from '@angular/forms';
 import { ViewChild, ElementRef } from '@angular/core';
