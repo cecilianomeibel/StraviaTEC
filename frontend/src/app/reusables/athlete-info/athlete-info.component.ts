@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/Services/api-service';
-import { Sportman } from 'src/app/Interfaces/sportmain';
+import { Sportman } from 'src/app/Interfaces/sportman';
 import { Router } from '@angular/router';
 
 @Component({

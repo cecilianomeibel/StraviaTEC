@@ -7,9 +7,10 @@
 .btn.btn-primary {
 
     border: 2px solid hsla(170, 60%, 40%, 0.6);
-    width: 20%;
     background-color: #98DFD6;
-    display: block;
+    width: auto; 
+    white-space: nowrap; 
+    overflow: hidden;
     color: #00235B;
     font-size: larger;
     margin: 10px;
