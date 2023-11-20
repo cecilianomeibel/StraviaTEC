@@ -1,3 +1,4 @@
 <h1 class="page-title">Mis carreras registradas</h1>
-<app-chart></app-chart>
-<app-chart></app-chart>
+<div *ngFor="let race of RacesList">
+    <app-chart [carrera]="race" [participantes] = "Participants"></app-chart>
+  </div>

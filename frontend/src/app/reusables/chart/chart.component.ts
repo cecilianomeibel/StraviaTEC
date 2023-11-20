@@ -7,43 +7,46 @@ import { Component, Input } from '@angular/core';
 })
 export class ChartComponent {
 
-  @Input() carrera!: any; //Cambiar any a Race
+  @Input() carrera!: {
+    id: number;
+    idActivity: number;
+    activityType: string;
+    cost: number;
+    bankAccount: string;
+    name:string;
+    access:string
+  }; 
 
-  datos: any[] = [
-    { posicion: 1, participante: 'Juan', tiempo: '10 seg' },
-    { posicion: 2, participante: 'María', tiempo: '20 seg' },
-    { posicion: 3, participante: 'Carlos', tiempo: '30 seg' }
-  ];
+  @Input() participantes!: {
+    idRace: number;
+    usernameSportman: string;
+  }[];
   
   // Función para llenar la tabla de forma iterativa
   ngOnInit() {
-    // Función para llenar la tabla de forma iterativa
-      const tablaBody = document.getElementById('tablaBody');
-    
-      if (tablaBody) {
-        // Limpiar contenido existente en la tabla
-        tablaBody.innerHTML = '';
-    
-        // Iterar sobre los datos y agregar filas a la tabla
-        this.datos.forEach((dato: any) => {
-          const fila = document.createElement('tr');
-          
-          const celdaPosicion = document.createElement('td');
-          celdaPosicion.textContent = dato.posicion;
-          fila.appendChild(celdaPosicion);
-    
-          const celdaParticipante = document.createElement('td');
-          celdaParticipante.textContent = dato.participante;
-          fila.appendChild(celdaParticipante);
-    
-          const celdaTiempo = document.createElement('td');
-          celdaTiempo.textContent = dato.tiempo;
-          fila.appendChild(celdaTiempo);
-    
-          // Agregar la fila a la tabla
-          tablaBody.appendChild(fila);
-        });
-      }
+    const tablaBody = document.getElementById('tablaBody');
+  
+    if (tablaBody && this.participantes) {
+      // Limpiar contenido existente en la tabla
+      tablaBody.innerHTML = '';
+  
+      // Iterar sobre los participantes y agregar filas a la tabla
+      this.participantes.forEach((participante: any) => {
+        const fila = document.createElement('tr');
+        
+        const celdaPosicion = document.createElement('td');
+        celdaPosicion.textContent = participante.idRace.toString(); //modificar a posicion
+        fila.appendChild(celdaPosicion);
+  
+        const celdaParticipante = document.createElement('td');
+        celdaParticipante.textContent = participante.usernameSportman;
+        fila.appendChild(celdaParticipante);
+  
+        tablaBody.appendChild(fila);
+      });
     }
+  }
+  
+  
 
 }

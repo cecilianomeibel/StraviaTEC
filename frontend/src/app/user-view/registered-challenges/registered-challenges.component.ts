@@ -36,7 +36,6 @@ export class RegisteredChallengesComponent {
 
   loadUserChallenges(username: any){
     //Obtener retos asignados a ese usuario
-    console.log('in', username)
     this.ChallengeXSportmanApi.getById('SportmanByChallenge', username).subscribe(
       (userChallenges: SportmanByChallenge[]) => {
         this.userChallenges = userChallenges;
