@@ -48,7 +48,8 @@ export class UserHomeComponent {
   }
 
   joinGroup(){
-    this.router.navigate(['/app-join-group']);
+    const username = this.username;
+    this.router.navigate(['/app-join-group'], { queryParams: { username } });
   }
 
   getRegisteredEvent(){

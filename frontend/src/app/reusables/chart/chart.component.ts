@@ -41,7 +41,7 @@ export class ChartComponent {
         const celdaParticipante = document.createElement('td');
         celdaParticipante.textContent = participante.usernameSportman;
         fila.appendChild(celdaParticipante);
-  
+        
         tablaBody.appendChild(fila);
       });
     }
