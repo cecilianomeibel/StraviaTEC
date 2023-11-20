@@ -18,7 +18,7 @@ namespace WebAPI.Controllers
 
         //Create
         [HttpPost]
-        public async Task<IActionResult> CreateSportmanByChallenge([FromBody] SportmanSignedRace sportmanSignedRace)
+        public async Task<IActionResult> CreateSportmanSignedRace([FromBody] SportmanSignedRace sportmanSignedRace)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
             string storedProcedureName = "SP_SPORTMAN_BY_RACE";
@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
         }
         //Get challenge by username
         [HttpGet("{usernameSportman}")]
-        public async Task<IActionResult> GetChallengeBySportman(string usernameSportman)
+        public async Task<IActionResult> GetRaceBySportman(string usernameSportman)
         {
             // Ensure the name of the stored procedure is correct
             string storedProcedureName = "SP_SPORTMAN_BY_RACE";
@@ -47,6 +47,27 @@ namespace WebAPI.Controllers
             {
             new SqlParameter("@statementType", "ReadOnlyOne"),
             new SqlParameter("@usernameSportman", usernameSportman)
+            };
+
+            // Execute the stored procedure and retrieve the list of SportmanByChallengeModel objects
+            List<SportmanSignedRace> sportmanSignedRace = await _sqlServerConnector.ExecuteStoredProcedureListAsync<SportmanSignedRace>(storedProcedureName, parameters);
+
+            // Return the list of challenges
+            return Ok(sportmanSignedRace);
+        }
+
+        //Get usernames by idRace
+        [HttpGet("{idRace}")]
+        public async Task<IActionResult> GetSportmanByRace(int idRace)
+        {
+            // Ensure the name of the stored procedure is correct
+            string storedProcedureName = "SP_SPORTMAN_BY_RACE";
+
+            // Create the parameters for the stored procedure
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@statementType", "ReadUsernames"),
+            new SqlParameter("@idRace", idRace)
             };
 
             // Execute the stored procedure and retrieve the list of SportmanByChallengeModel objects
