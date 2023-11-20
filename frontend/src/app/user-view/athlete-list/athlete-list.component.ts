@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Sportman } from 'src/app/Interfaces/sportmain';
+import { Sportman } from 'src/app/Interfaces/sportman';
 import { NavBarComponent } from 'src/app/reusables/nav-bar/nav-bar.component';
 import { ApiService } from 'src/app/Services/api-service';
 

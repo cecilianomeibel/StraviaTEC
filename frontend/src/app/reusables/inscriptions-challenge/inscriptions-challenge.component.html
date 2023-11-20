@@ -8,8 +8,7 @@
                 <th>Periodo</th>
                 <th>Tipo de Actividad</th>
                 <th>Acceso</th>
-                <th>Categoria</th>
-                <th>Patrocinio</th>
+                
                 
             </tr>
         </thead>
@@ -21,10 +20,7 @@
                 <td>{{inscriptionC.period}}</td>
                 <td>{{inscriptionC.type}}</td>
                 <td>{{inscriptionC.access}}</td>
-                <td *ngFor="let category of category">
-                    {{ category.nameCategory }}</td>
-                <td *ngFor="let sponsor of sponsorList">
-                {{ sponsor.sponsorName }}</td>
+               
                 
                 <td>
                     <button class="btn btn-sm btn-info" (click)="inscription()">
