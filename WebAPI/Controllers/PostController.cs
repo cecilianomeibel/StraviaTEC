@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 using WebAPI.Models;
 using WebAPI.Utils;
 
@@ -24,9 +25,17 @@ namespace WebAPI.Controllers
         {
             string storedProcedureName = "SP_POST_CRUD";
 
+            SqlParameter idParameter = new SqlParameter
+            {
+                ParameterName = "@id",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Output
+            };
+
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@statementType", "CREATE"),
+                new SqlParameter("@statementType", "Create"),
+                idParameter,
                 new SqlParameter("@idSportman", post.idSportman),
                 new SqlParameter("@activityType", post.activityType),
                 new SqlParameter("@dateAndTime", post.dateAndTime),
@@ -35,9 +44,9 @@ namespace WebAPI.Controllers
                 new SqlParameter("@eventType", post.eventType),
                 new SqlParameter("@duration", post.duration)
             };
-
             await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<object>(storedProcedureName, parameters);
-            return Ok();
+            int createdActivityId = Convert.ToInt32(idParameter.Value);
+            return Ok(createdActivityId);
         }
     }
 }
