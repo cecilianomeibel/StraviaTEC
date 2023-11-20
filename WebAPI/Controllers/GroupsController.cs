@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpPut("{id}")]
+        [HttpPut("{name}")]
         public async Task<IActionResult> UpdateGraoup(string name, [FromBody] Groups group)
         {
             // Asegúrate de que el nombre del stored procedure sea correcto
