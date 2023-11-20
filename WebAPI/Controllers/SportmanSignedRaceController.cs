@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
             return Ok();
         }
         //Get challenge by username
-        [HttpGet("{usernameSportman}")]
+        [HttpGet("ByUsername/{usernameSportman}")]
         public async Task<IActionResult> GetRaceBySportman(string usernameSportman)
         {
             // Ensure the name of the stored procedure is correct
@@ -57,7 +57,7 @@ namespace WebAPI.Controllers
         }
 
         //Get usernames by idRace
-        [HttpGet("{idRace}")]
+        [HttpGet("ByRace/{idRace}")]
         public async Task<IActionResult> GetSportmanByRace(int idRace)
         {
             // Ensure the name of the stored procedure is correct
