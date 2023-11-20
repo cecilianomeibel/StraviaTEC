@@ -18,7 +18,7 @@ export class StravLoginComponent {
       private fb: FormBuilder
     ) {
       this.loginForm = this.fb.group({
-        email: ['', Validators.required],
+        username: ['', Validators.required],
         password: ['', Validators.required],
       });
     }

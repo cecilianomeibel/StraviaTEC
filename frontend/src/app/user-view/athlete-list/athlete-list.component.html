@@ -1,15 +1,31 @@
 <div class="row justify-content-center mt-4">
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-6">
 
-                <h1 class="row justify-content-center mt-4"> Lista de Atletas</h1>
-
-                <app-athlete-info></app-athlete-info>
-                <app-athlete-info></app-athlete-info>
-
-
-            </div>
+            <form #grupoForm="ngForm">
+                <div class="row justify-content-center mt-4">
+                    <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
+                    <h1 class="text-center">Atletas</h1>
+            
+                </div>
+                <br>
+                <div class="container">
+                  <h3 class="select-title">Busca atletas! </h3>
+                  <div class="form-container">
+                    <select name="group" class="form-select" [(ngModel)]="selectedGroup" required>
+                      
+                      <option 
+                      *ngFor="let sportmain of athlete" [value]="sportmain.name">
+                      {{ sportmain.username }}
+                      </option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" (click)="addfriend()">Agregar</button>
+                    <button class="btn btn-primary" (click)="deletefriend()">Eliminar</button>
+                  </div>
+              
+                  <button class="btn btn-primary" (click)="goHome()">Volver ⬅️</button>
+                </div>
+              </form>
         </div>
     </div>
 </div>

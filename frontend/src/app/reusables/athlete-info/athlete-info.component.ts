@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from 'src/app/Services/api-service';
 import { Sportman } from 'src/app/Interfaces/sportmain';
 import { Router } from '@angular/router';
@@ -9,12 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./athlete-info.component.css']
 })
 export class AthleteInfoComponent {
-  sportman: Sportman = {};
+  @Input() sportman: Sportman | undefined;
+  //sportman: Sportman = {};
   constructor(
     private apiService: ApiService<Sportman>,
     private router: Router,
   ) { }
 
+  ngOnInit() {
+    console.log(' usuarios encontrados athlete info:', this.sportman);
+  }
+
+  addFriend() {
+
+  }
+  deleteFriend() {
+
+  }
+}
+
+
+  /*
   ngOnInit() {
     // Llama al método del servicio para obtener los datos del deportista
     console.log('no entra ');
@@ -30,8 +45,4 @@ export class AthleteInfoComponent {
 
       });
   }
-
-  addFriend() {
-
-  }
-}
+*/
