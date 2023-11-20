@@ -48,14 +48,16 @@ export class UserHomeComponent {
   }
 
   joinGroup(){
-    this.router.navigate(['/app-join-group']);
+    const username = this.username;
+    this.router.navigate(['/app-join-group'], { queryParams: { username } });
   }
 
   getRegisteredEvent(){
+    const username = this.username;
     if(this.registeredSelect == "Carreras"){
-      this.router.navigate(['/app-registered-races']);
+      this.router.navigate(['/app-registered-races'], { queryParams: { username } });
     }else if(this.registeredSelect == "Retos"){
-      this.router.navigate(['/app-registered-challenges']);
+      this.router.navigate(['/app-registered-challenges'], { queryParams: { username } });
     }
   }
 
