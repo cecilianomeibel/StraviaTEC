@@ -52,10 +52,11 @@ export class UserHomeComponent {
   }
 
   getRegisteredEvent(){
+    const username = this.username;
     if(this.registeredSelect == "Carreras"){
-      this.router.navigate(['/app-registered-races']);
+      this.router.navigate(['/app-registered-races'], { queryParams: { username } });
     }else if(this.registeredSelect == "Retos"){
-      this.router.navigate(['/app-registered-challenges']);
+      this.router.navigate(['/app-registered-challenges'], { queryParams: { username } });
     }
   }
 

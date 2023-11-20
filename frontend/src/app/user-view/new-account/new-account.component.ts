@@ -83,6 +83,6 @@ export class NewAccountComponent {
 
   
   back() {
-    this.router.navigate(['/app-login']);
+    this.router.navigate(['/']);
   }
 }
