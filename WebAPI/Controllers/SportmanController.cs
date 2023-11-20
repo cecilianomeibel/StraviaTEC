@@ -42,6 +42,39 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
+        {
+            string storedProcedureName = "SP_SPORTMAN_CRUD"; 
+
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@statementType", "Login"),
+                new SqlParameter("@username", loginRequest.username),
+                new SqlParameter("@password", loginRequest.password)
+                };
+
+                Response isAuthenticated = await _sqlServerConnector.ExecuteStoredProcedureSingleAsync<Response>(storedProcedureName, parameters);
+
+                if (isAuthenticated.Result == 1)
+                {
+                    return Ok(new { Message = "Login successful" });
+                }
+                else
+                {
+                return Unauthorized(new { Message = "Invalid username or password" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "Internal Server Error" });
+            }
+        }
+
+
+
         [HttpGet]
         public async Task<IActionResult> GetAllSportmen()
         {

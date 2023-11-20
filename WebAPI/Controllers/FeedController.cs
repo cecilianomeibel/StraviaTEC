@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
                 new SqlParameter("@username", username)
             };
 
-            List<Activity> feed = await _sqlServerConnector.ExecuteStoredProcedureListAsync<Activity>(storedProcedureName, parameters);
+            List<Post> feed = await _sqlServerConnector.ExecuteStoredProcedureListAsync<Post>(storedProcedureName, parameters);
 
             return Ok(feed);
         }
