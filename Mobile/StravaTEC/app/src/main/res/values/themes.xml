@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.StravaTEC" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.StravaTEC" parent="Base.Theme.StravaTEC" />
+
+    <style name="SplashTheme" parent= "Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary"> @color/white </item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="colorPrimaryDark"> @color/white </item>
+        <item name="colorAccent"> @color/white </item>
+        <item name="android:statusBarColor"> @color/white</item>
+    </style>
+</resources>
