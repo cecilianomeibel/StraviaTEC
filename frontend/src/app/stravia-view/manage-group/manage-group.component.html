@@ -1,0 +1,48 @@
+<div class="container contenedor">
+<h1 class="page-title"> Gestion de grupos 📢</h1>
+
+<h3 class="title2">Crear un grupo</h3>
+    <form [formGroup]="createForm" (ngSubmit)="createGroup()">
+        <div class="mb-3">
+            <h5 for="nombre" class="title">Nombre: </h5>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+
+        <div class="mb-3">
+            <h5 for="admin" class="title">Administrador: </h5>
+            <input type="text" class="form-control" formControlName="admin">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+
+<h3 class="title2">Modificar un grupo</h3>
+
+    <form [formGroup]="modifyForm" (ngSubmit)="modifyGroup()">
+        <div class="mb-3">
+            <h5 for="id" class="title">Nombre del grupo: </h5>
+            <input type="text" class="form-control" formControlName="id">
+        </div>
+
+        <div class="mb-3">
+            <h5 for="nombre" class="title">Nombre: </h5>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+
+        <div class="mb-3">
+            <h5 for="admin" class="title">Administrador: </h5>
+            <input type="text" class="form-control" formControlName="admin">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+<h3 class="title2">Eliminar un grupo</h3>
+    <form [formGroup]="deleteForm" (ngSubmit)="deleteGroup()">
+        <div class="mb-3">
+            <h5 for="id" class="title">Nombre del grupo: </h5>
+            <input type="text" class="form-control" formControlName="id">
+        </div>
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+    </form>
+</div> 

@@ -1,0 +1,137 @@
+<div class="container mt-3">
+    <div class="row justify-content-center mt-4">
+        <img src="../assets/SimpleLogoWin.png" class="card-img-top" style="width: 125px;">
+        <h1 class="text-center">Crear Retos</h1>
+
+    </div>
+    <!-- inputs completo <input type="number" id="price" formControlName="price" required /> -->
+
+    <!-- Formulario para crear/editar promociones  <form [formGroup]="promotionForm" (ngSubmit)="saveMovie()"> -->
+        <form [formGroup]="manageCForm" (ngSubmit)="saveRace()"> 
+        <div class="container mt-5">
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- <div class="form-group">-->
+                    <div>
+                        <label for="idrace">ID del Reto:</label>
+                        <select class="form-select" id="idarace">
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-container" class="col-md-6">
+                    <!-- <div class="form-group">-->
+
+                    <div>
+                        <label for="idactivity">Tipo de Actividad/kilometraje:</label>
+                        <select class="form-select" id="idactivity">
+                            <option value="0">Selecciona una Actividad</option>
+                            <option>Competencia</option>
+                            <option>Reto</option>
+
+                        </select>
+                    </div>
+
+
+                    <div>
+                        <label for="idcategory">Categoría:</label>
+                        <select class="form-select" id="idcatgory">
+                            <option value="0">Selecciona una Categoría</option>
+                            <option>Senderismo</option>
+                            <option>Ruta en Bicicleta</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sponsorName">Selecciona un patrocinador:</label>
+                        
+                        <select id="sponsorName"
+                        class="form-control"
+                        formControlName="sponsorName"
+                        required>
+                            <option *ngFor="let sponsor of sponsorList"
+                            [value]="sponsor.sponsorName">
+                                {{ sponsor.sponsorName }}
+                              </option>
+
+                        </select>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input class="input-select" type="text" id="name" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="price">Periodo:</label>
+                        <input class="input-select" type="text" id="price" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="group">Grupos:</label>
+                        <input class="input-select" type="text" id="price" />
+                        <button type="button" class="btn btn1" (click)="addGroup()">
+                            Agregaar grupo
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <div class="form-group">-->
+            <div>
+
+                <button type="button" class="btn btn1" (click)="createNew()">
+                    Crear
+                </button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <!-- Lista de promociones de aire -->
+    <div class="row justify-content-center mt-4">
+
+        <h1 class="text-center">Retos Registrados</h1>
+
+    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>ID Carrera</th>
+                <th>Nombre</th>
+                <th>Periodo ( días )</th>
+                <th>Tipo de Actividad (km)</th>
+                <th>Categoría?</th>
+                <th>Tipo de Evento</th>
+                <th>Patrocinadores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- *ngFor="let promotion of promotionList" -->
+            <tr>
+                <td>id</td>
+                <td>TecChallenge</td>
+                <td>12</td>
+                <td>20</td>
+                <td>Master A</td>
+                <td>privada</td>
+                <td>gucci</td>
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="editRace()">
+                        Editar
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteRace()">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

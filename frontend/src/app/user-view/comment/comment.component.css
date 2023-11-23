@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .card {
+    width: 70%;
+    margin: 20px;
+    margin-left: 14%;
+    background-color: #fff;
+    border: 2px solid #00235B;
+    border-radius: 8px;
+    overflow: hidden; /* Para evitar que el contenido se desborde */
+  }
+
+  .titulo{
+    color: #00235B;
+  }
+  
+  .header, .footer {
+    background-color: #98DFD6;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .horizontal-line {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+  }
+  
+  .section {
+    padding: 10px;
+  }
+  
+  /* Estilos opcionales para mejorar la apariencia */
+  h2 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .btn {
+    background-color: #00235B;
+    border: 2px solid hsla(170, 60%, 40%, 0.6);
+    font-size: larger;
+    margin: 10px;
+    padding: 10px 20px;
+}
+

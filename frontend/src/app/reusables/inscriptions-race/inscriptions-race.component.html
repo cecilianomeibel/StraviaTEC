@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Actividad</th>
+                <th>Costo</th>
+                <th>Cuenta Bancaria</th>
+                <th>Acceso</th>
+                
+                
+              
+            </tr>
+        </thead>
+        <tbody>
+            <!-- *ngFor="let promotion of promotionList" -->
+            <tr>
+                <td>{{inscriptionR.name}}</td>
+                <td>{{inscriptionR.activityType}}</td>
+                <td>{{inscriptionR.cost}}</td>
+                <td>{{inscriptionR.bankAccount}}</td>
+                <td>{{inscriptionR.access}}</td>
+               
+                    
+
+                <td>
+                    <button type="submit" class="btn btn-sm btn-info" (click)="inscription('tecRace')">
+                        Inscribir
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

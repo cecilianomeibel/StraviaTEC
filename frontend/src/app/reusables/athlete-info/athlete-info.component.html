@@ -1,0 +1,35 @@
+<div *ngIf="sportman" class="row justify-content-center mt-4">
+    <div class="container-md">
+
+        <div class="card-body">
+            <div class="row justify-content-center mt-4">
+                <ul class="list-group list-group-horizontal d-flex">
+                    <li class="list-group-item flex-fill">
+                        <div class="row justify-content-center mt-4">
+                            <img src="{{ sportman.picture }}" class="card-img-top" style="width: 150px;">
+                        </div>
+                    </li>
+                    <li class="list-group-item flex-fill">
+                        <div class="row justify-content-center mt-4">
+                            <h5 class="card-title">Usuario: {{ sportman.username }}</h5>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <h5 class="card-title">Nombre: {{ sportman.username }} y Primer Apellido : {{
+                                sportman.lastname1 }} Segundo Apellido : {{ sportman.lastname2 }}lastname2</h5>
+                        </div>
+                    </li>
+                    <li class="list-group-item flex-fill">
+                        <div class="row justify-content-center mt-4">
+                            <button class="btn btn-sm btn-info">
+                                Agregar
+                            </button>
+                            <button class="btn btn-sm btn-danger">
+                                Eliminar
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
